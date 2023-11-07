@@ -1,0 +1,23 @@
+* {
+
+  margin: 0;
+}
+
+.AppTen {
+  height: 100vh;
+  overflow-y: scroll !important;
+}
+
+.container2 {
+  display: flex;
+  margin-top: 1px !important;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.row {
+  --bs-gutter-x: 0 !important;
+}

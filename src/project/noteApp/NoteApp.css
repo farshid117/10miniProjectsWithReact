@@ -1,0 +1,48 @@
+*:focus,
+*:active {
+    outline: 0 !important;
+    box-shadow: 0 !important;
+}
+
+body {
+    background: rgb(68, 100, 173);
+    background: linear-gradient(100deg, rgba(68, 100, 173, 1), rgba(74, 21, 110, 1));
+    color: white;
+    margin-bottom: 2rem;
+
+
+}
+::-webkit-scrollbar{
+    display: none ;
+}
+.NoteApp {
+    height: 100vh !important;
+    overflow-y: scroll !important;
+}
+
+header p {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem !important;
+    font-weight: bold;
+    text-shadow: 2px 2px 15px rgb(176, 230, 255);
+    margin-bottom: 0
+}
+
+@media (max-width: 576px) {
+    header p {
+        font-size: 2.2rem !important;
+
+    }
+}
+
+::-webkit-input-placeholder {
+    font-size: 14px !important;
+    color: #333;
+}
+
+.Btn2:hover {
+    background: #d63384 !important;
+}

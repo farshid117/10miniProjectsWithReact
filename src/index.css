@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box !important;
+    list-style: none !important;
+    text-decoration: none !important;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    width: 100%;
+    font-family: "Vazir";
+    background-color: #0a1045 !important;
+    color: whitesmoke;
+    overflow: auto !important;
+    direction: rtl
+}
+
+::-webkit-input-placeholder {
+    font-size: 14px !important;
+    color: #333;
+}
+
+.Toastify__toast-body {
+    font-family: "Vazir", tahoma;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.modal-header .btn-close {
+    margin: calc(-0.5 * var(--bs-modal-header-padding-y)) calc(-0.5 * var(--bs-modal-header-padding-x)) calc(-0.5 * var(--bs-modal-header-padding-y)) auto !important;
+}

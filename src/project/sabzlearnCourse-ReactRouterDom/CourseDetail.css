@@ -1,0 +1,4 @@
+.CourseDetail{
+    height: 100vh !important;
+    overflow-y: scroll !important;
+}

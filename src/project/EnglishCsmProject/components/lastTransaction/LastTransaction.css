@@ -1,0 +1,18 @@
+.widgetButton {
+    border: none;
+    padding: 5px 7px;
+    background: inherit;
+    font-weight: bold;
+}
+
+.widgetButton.pending {
+    color: blue;
+}
+
+.widgetButton.success {
+    color: green;
+}
+
+.widgetButton.reject {
+    color: red;
+}

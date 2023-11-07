@@ -1,0 +1,11 @@
+/* .App{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+} */
+
+.textShadow {
+  text-shadow: 2px 2px 15px rgb(176, 230, 255);
+}

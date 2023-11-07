@@ -1,0 +1,12 @@
+.dataGrid {
+    width: 100% !important;
+    overflow-x: scroll !important;
+}
+
+#productInfo h6 {
+    direction: rtl;
+    text-align: center;
+}
+#productInfo .card{
+    margin-bottom: 0 !important;
+}

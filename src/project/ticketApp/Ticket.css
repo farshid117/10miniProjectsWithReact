@@ -1,0 +1,29 @@
+* {
+    padding: 0;
+    margin: 0;
+    overflow: hidden !important;
+    
+}
+
+.Ticket {
+    width: 100vw;
+    height: 100vh !important;
+    position: relative !important;
+    
+
+}
+
+.backImg {
+    display: block;
+    width: 100vw !important;
+    height: 100vh;
+    background-size: contain !important;
+}
+
+.myCard {
+    background-color: rgba(0, 0, 0, 0.6)
+}
+::-webkit-input-placeholder{
+    font-size: 13px !important;
+    font-weight: bold !important;
+}
