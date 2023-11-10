@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet-async'
-import { Link } from 'react-router-dom'
 
 import { Book, Header2 } from '../../project'
 
@@ -110,11 +109,11 @@ class AddBook extends Component {
                         </div>
                     </div>
 
-                    <section id='bookList' className='overflow-scroll'>
+                    <section id='bookList'>
                         <div className='d-flex flex-column align-items-center mt-3'>
                             {
                                 books.length > 0 &&
-                                <div className='card  w-75 h-auto text-center'>
+                                <div className='card  w-100 h-auto text-center'>
                                     <div className='table-responsive w-100'>
                                             <table className='table table-striped  align-middle'>
                                             <thead>
