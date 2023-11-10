@@ -3,15 +3,20 @@ import React, { Component } from 'react'
 class Book extends Component {
 
     render() {
-      //  console.log(this.props)
+        const { id, name, author, year } = this.props
+        //  console.log(this.props)
         return (
             <>
 
                 <tr>
-                    <th>{this.props.id}</th>
-                    <td>{this.props.name}</td>
-                    <td>{this.props.author}</td>
-                    <td>{this.props.year}</td>
+                    <th>{id}</th>
+                    <td>{name}</td>
+                    <td>{author}</td>
+                    <td>{year}</td>
+                    <td>
+                        <div className='btn btn-sm btn-success'>ویرایش</div>
+                        <div className='btn btn-sm btn-danger'>حذف</div>
+                    </td>
                 </tr>
 
             </>

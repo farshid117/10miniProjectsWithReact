@@ -9,9 +9,7 @@ class AddBook extends Component {
         name: "",
         author: "",
         year: "",
-
         books: [],
-
     }
 
     onChangeHandler(event) {
@@ -20,17 +18,17 @@ class AddBook extends Component {
     }
     onSubmitHandler(event) {
         event.preventDefault()
-        const {name, author, year, books} = this.state
+        const { name, author, year, books } = this.state
         if (!name || !author || !year) {
             alert("لطفا تمامی فیلدها را پر نمائید")
         } else {
             this.setState({
                 books: [...books, {
-                                    id: books.length + 1,
-                                    name: name,
-                                    author, //✍️ ES6
-                                    year
-                                  }
+                    id: books.length + 1,
+                    name: name,
+                    author, //✍️ ES6
+                    year
+                }
                 ]
             })
 
@@ -39,6 +37,7 @@ class AddBook extends Component {
         }
     }
     render() {
+
         return (
             <div className='AddBook mt-3'>
                 <Helmet>
@@ -62,7 +61,10 @@ class AddBook extends Component {
                                                     <label htmlFor="input1" className="col-form-label">نام کتاب :</label>
                                                 </div>
                                                 <div className="col-md-9 col-lg-8">
-                                                    <input type="text" id="input1" className="form-control" placeholder='نام کتاب'
+                                                    <input type="text"
+                                                        id="input1"
+                                                        className="form-control"
+                                                        placeholder='نام کتاب'
                                                         name="name"
                                                         value={this.state.name}
                                                         onChange={(event) => this.onChangeHandler(event)}
@@ -74,19 +76,25 @@ class AddBook extends Component {
                                                     <label htmlFor="input2" className="col-form-label"> نویسنده  :</label>
                                                 </div>
                                                 <div className="col-md-9 col-lg-8">
-                                                    <input type="text" id="input2" className="form-control" placeholder='نویسنده'
+                                                    <input type="text"
+                                                        id="input2"
+                                                        className="form-control"
+                                                        placeholder='نویسنده'
                                                         name="author"
                                                         value={this.state.author}
                                                         onChange={(event) => this.onChangeHandler(event)}
                                                     />
                                                 </div>
                                             </div>
-                                            <div className="row  align-items-center justify-content-center mt-1 mt-md-3">
+                                            <div className="row align-items-center justify-content-center mt-1 mt-md-3">
                                                 <div className="d-none d-lg-block col-2">
                                                     <label htmlFor="input3" className="col-form-label"> سال تالیف :</label>
                                                 </div>
                                                 <div className="col-md-9 col-lg-8">
-                                                    <input type="text" id="input3" className="form-control" placeholder='سال تالیف'
+                                                    <input type="text"
+                                                        id="input3"
+                                                        className="form-control"
+                                                        placeholder='سال تالیف'
                                                         name="year"
                                                         value={this.state.year}
                                                         onChange={(event) => this.onChangeHandler(event)}
@@ -106,24 +114,27 @@ class AddBook extends Component {
                 </div>
                 <div className='d-flex flex-column align-items-center mt-3'>
                     <div className='card w-75 h-auto text-center'>
-                        <table className='table table-striped'>
-                            <thead>
-                                <tr>
-                                    <th>ردیف</th>
-                                    <td className='fw-bold'>نام کتاب</td>
-                                    <td className='fw-bold'>نویسنده</td>
-                                    <td className='fw-bold'>سال تالیف</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
+                    <div className="table-responsive">
+                            <table className='table table-striped'>
+                                <thead>
+                                    <tr>
+                                        <th>ردیف</th>
+                                        <td className='fw-bold'>نام کتاب</td>
+                                        <td className='fw-bold'>نویسنده</td>
+                                        <td className='fw-bold'>سال تالیف</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
 
-                                    this.state.books.map((book) => (
-                                        <Book key={book.id} {...book} />
-                                    ))
-                                }
-                            </tbody>
-                        </table>
+                                        this.state.books.map((book) => (
+                                            <Book key={book.id} {...book} />
+                                        ))
+                                    }
+                                </tbody>
+                            </table>
+
+                    </div>
                     </div>
                 </div>
 
