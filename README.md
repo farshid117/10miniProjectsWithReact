@@ -7,7 +7,7 @@
 in this repository  i have collected 10 practical mini-projects in React
 that designed by  **React-Boostrap**
 ###### version of React is 18.2.0
-I hope it is useful for you
+I hope it is useful for you 🖐️💚
 
 #### List of Mini Projects :
 
