@@ -13,11 +13,18 @@ import Products from './project/EnglishCsmProject/pages/Products/Products';
 import ProductDetails from './project/EnglishCsmProject/pages/Products/ProductDetails';
 
 let routes = [
-    { path: '/', element: <Main /> },
-    { path: '/practice', element: <Practice /> },
+    {
+        path: '/',
+        element: <Main />
+    },
+    {
+        path: '/practice',
+        element: <Practice />
+    },
     /* Nested Route */
     {
-        path: '/rrd', element: <Header />,
+        path: '/rrd',
+        element: <Header />,
         children: [
             { path: 'courses', element: <Courses /> },
             { path: 'courses/:courseId', element: <CourseDetail /> },
@@ -50,11 +57,11 @@ let routes = [
         path: '/cmsproject', element: <AppTen />,
         children: [
             { path: '*', element: <Home /> },
-            {path: 'users', element: <UserList />,},
-            { path: 'users/edit/:id', element: <UserDetails /> } ,
+            { path: 'users', element: <UserList />, },
+            { path: 'users/edit/:id', element: <UserDetails /> },
             { path: 'newUser', element: <NewUser /> },
             { path: 'products', element: <Products /> },
-            { path: 'products/edit/:id', element: <ProductDetails /> } ,
+            { path: 'products/edit/:id', element: <ProductDetails /> },
         ]
     },
 
