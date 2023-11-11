@@ -1,10 +1,10 @@
 
-const Book = ({ id, name, author, year, editHandler, deleteHandler }) => {
+const Book = ({ id, name, author, year, row, editHandler, deleteHandler }) => {
     return (
         <>
 
             <tr>
-                <th style={{ fontSize: "1rem" }}>{id}</th>
+                <th style={{ fontSize: "1rem" }}>{row+1}</th>
                 <td style={{ fontSize: "1rem" }}>{name}</td>
                 <td style={{ fontSize: "1rem" }}>{author}</td>
                 <td style={{ fontSize: "1rem" }}>{year}</td>

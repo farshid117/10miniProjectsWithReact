@@ -7,7 +7,7 @@ class Header2 extends Component {
         return (
             <>
                 <div className="container d-flex justify-content-center align-items-center">
-                    <p className='h1 text-center mt-3' >Farshid <span className='text-warning fw-bold'>BookList</span></p>
+                    <p className='h1 text-center mt-3 fw-bold' >AliCoder <span className='text-warning fw-bold'>BookList</span></p>
                     <Link to="/" className='btn btn-warning position-absolute end-0 top-0'>خانه</Link>
                 </div>
             </>

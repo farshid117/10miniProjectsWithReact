@@ -43,8 +43,9 @@ import { Book, Header2 } from '../../project'
         console.log("in editHadler AddBook event is :", event)
     }
     const deleteHandler = (event, id) => {
-        console.log("in deleteHandler AddBook id is :", id)
-        console.log("in deleteHandler AddBook event is :", event)
+        console.log(typeof id)
+        const filterBook = books.filter(book => book.id !== id);
+        setBooks(filterBook)
     }
 
 
@@ -139,8 +140,8 @@ import { Book, Header2 } from '../../project'
                                         <tbody className='overflow-scroll'>
                                             {
                                                 books.length > 0 &&
-                                                books.map((book) => (
-                                                    <Book key={book.id} {...book} editHandler={editHandler} deleteHandler={deleteHandler} />
+                                                books.map((book, index) => (
+                                                    <Book key={book.id} row={index} {...book} editHandler={editHandler} deleteHandler={deleteHandler} />
                                                 ))
                                             }
                                         </tbody>
