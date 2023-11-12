@@ -4,19 +4,20 @@ import { Helmet } from 'react-helmet-async'
 import { Book, Header2 } from '../../project'
 
 
- const AddBook = () => {
+const AddBook = () => {
 
 
     const [name, setName] = useState("")
     const [author, setAuthor] = useState("")
     const [year, setYear] = useState("")
     const [books, setBooks] = useState([])
+    const [openEditModal, setOpenEditModal] = useState(false)
 
     const onChangeHandler = (event) => {
-        
-        if (event.target.name ==="name") setName(event.target.value)
-        if (event.target.name ==="author") setAuthor(event.target.value)
-        if (event.target.name ==="year") setYear(event.target.value)
+
+        if (event.target.name === "name") setName(event.target.value)
+        if (event.target.name === "author") setAuthor(event.target.value)
+        if (event.target.name === "year") setYear(event.target.value)
 
     }
     const onSubmitHandler = (event) => {
@@ -46,6 +47,11 @@ import { Book, Header2 } from '../../project'
         console.log(typeof id)
         const filterBook = books.filter(book => book.id !== id);
         setBooks(filterBook)
+    }
+    const openEditModalHandler = () => {
+        setOpenEditModal(prevValue => {
+            return !prevValue
+        })
     }
 
 
@@ -105,7 +111,7 @@ import { Book, Header2 } from '../../project'
                                                         placeholder='سال تالیف'
                                                         name="year"
                                                         value={year}
-                                                        onChange={(event) =>onChangeHandler(event)}
+                                                        onChange={(event) => onChangeHandler(event)}
                                                     />
                                                 </div>
                                             </div>
@@ -141,7 +147,14 @@ import { Book, Header2 } from '../../project'
                                             {
                                                 books.length > 0 &&
                                                 books.map((book, index) => (
-                                                    <Book key={book.id} row={index} {...book} editHandler={editHandler} deleteHandler={deleteHandler} />
+                                                    <Book key={book.id}
+                                                        row={index}
+                                                        {...book}
+                                                        openEditModal={openEditModal}
+                                                        openEditModalHandler={openEditModalHandler}
+                                                        editHandler={editHandler}
+                                                        deleteHandler={deleteHandler}
+                                                    />
                                                 ))
                                             }
                                         </tbody>
