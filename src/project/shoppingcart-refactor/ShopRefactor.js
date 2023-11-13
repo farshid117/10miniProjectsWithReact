@@ -3,7 +3,7 @@ import { confirmAlert } from 'react-confirm-alert'
 import { toast } from 'react-toastify';
 import { Helmet } from 'react-helmet-async';
 
-import Navbar from './components/navbar/Navbar';
+import NavbarShop from './components/navbar/Navbar';
 import ProductCard from './components/ProductCard';
 import ShoppingCart from './components/ShoppingCart';
 
@@ -100,10 +100,11 @@ const ShopRefactor = () => {
             <Helmet>
                 <title>فروشگاه | 10 مینی پروژه ری‌اکت</title>
             </Helmet>
-            <Navbar />
-            <br /><br />
-            <h1 className='text-center' style={{ fontFamily: "Booter" }}>Shop Product</h1>
-            <section id='ProductCard' className='mt-5'>
+            <NavbarShop />
+            <div id='header-tex' style={{marginTop:100}}>
+                <h1 className='text-center mt-3' style={{ fontFamily: "Booter" }}>Shop Product</h1>
+            </div>
+            <section id='ProductCard' className='mt-2'>
                 <div className="container">
                     <div className="row">
                         {

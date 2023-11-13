@@ -4,7 +4,7 @@ const ProductCard = ({ product, addToOrderHandler }) => {
         return (
             <>
 
-                <div className='col-12 col-sm-6 col-md-4 col-lg-3  g-2  '>
+                <div className='col-12 col-sm-6 col-md-4 col-lg-3 g-2'>
                     <div className="card h-100 ">
                         <img src={product.pic} className="card-img-top h-50 rounded-bottom-3" alt="pic" />
                         <div className="card-body">
