@@ -4,6 +4,11 @@
     box-shadow: 0 !important;
 }
 
+::-webkit-input-placeholder {
+    font-size: 1rem !important;
+}
+
+
 body {
     background: linear-gradient(100deg, rgba(68, 100, 173, 1), rgba(74, 21, 110, 1));
     color: white;
@@ -28,23 +33,20 @@ header p {
 
 }
 
-input[type="text"].completed {
-    text-decoration: line-through !important;
-    color: #777 !important;
-    background: #ccc
-}
-
 input[type="text"] {
-    font-size: 14px !important;
+    font-size: 1rem !important;
     font-weight: bolder !important;
 }
 
-::-webkit-input-placeholder {
-    font-size: 1rem !important;
+input[type="text"].completed {
+    text-decoration: line-through !important;
+    color: #777 !important;
+    background: #ccc;
 }
 
 .btn:hover {
     background: #455BA6 !important;
+    color: #fff !important;
 }
 
 .form-select-lg {

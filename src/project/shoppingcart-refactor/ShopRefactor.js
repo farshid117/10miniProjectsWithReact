@@ -10,15 +10,15 @@ import ShoppingCart from './components/ShoppingCart';
 import "./ShopRefactor.css"
 
 const ShopRefactor = () => {
-    const [products,] = useState([
-        { id: "1", name: "کفش بوکس", pic: "./img/104.jpg", desc: "جنس تمام چرم مارک vanum", price: 1500000 },
-        { id: "2", name: "دستکش بوکس", pic: "./img/105.jpg", desc: "چرم اصلی-ساخت آلمان Topten", price: 1200000 },
-        { id: "3", name: "شورت بوکس", pic: "./img/108.jpg", desc: "مناسب برای فایت", price: 160000 },
-        { id: "4", name: "باند بوکس", pic: "./img/110.jpg", desc: "جنس تمام چرم مارک vanum", price: 1500000 },
-        { id: "5", name: "ساق بند بوکس", pic: "./img/114.jpg", desc: "جنس تمام چرم مارک vanum", price: 1500000 },
-        { id: "6", name: "لثه بند بوکس", pic: "./img/104.jpg", desc: "جنس تمام چرم مارک vanum", price: 1500000 },
-    ])
     const [orders, setOrders] = useState([])
+    const [products,] = useState([
+        { id: "1", name: "کفش بوکس",   pic: "./img/104.jpg",  price: 1500000, desc: "جنس تمام چرم مارک vanum",     },
+        { id: "2", name: "دستکش بوکس", pic: "./img/105.jpg", price: 1200000,desc: "چرم اصلی-ساخت آلمان Topten",  },
+        { id: "3", name: "شورت بوکس",   pic: "./img/108.jpg", price: 160000, desc: "مناسب برای فایت",             },
+        { id: "4", name: "باند بوکس",     pic: "./img/110.jpg", price: 1500000, desc: "جنس تمام چرم مارک vanum",    },
+        { id: "5", name: "ساق بند بوکس", pic: "./img/114.jpg", price: 1500000, desc: "جنس تمام چرم مارک vanum",    },
+        { id: "6", name: "لثه بند بوکس",  pic: "./img/104.jpg", price: 1500000, desc: "جنس تمام چرم مارک vanum",    },
+    ])
 
     const addToOrderHandler = (id) => {
         //console.log(id)
@@ -94,16 +94,19 @@ const ShopRefactor = () => {
             theme: "light",
         });
     }
-
+   
     return (
         <div className="Shop">
             <Helmet>
                 <title>فروشگاه | 10 مینی پروژه ری‌اکت</title>
             </Helmet>
             <NavbarShop />
-            <div id='header-tex' style={{marginTop:100}}>
+
+            <div id='header-tex' style={{marginTop:150}}>
                 <h1 className='text-center mt-3' style={{ fontFamily: "Booter" }}>Shop Product</h1>
             </div>
+
+            {/* Product Cart */}
             <section id='ProductCard' className='mt-2'>
                 <div className="container">
                     <div className="row">
@@ -115,6 +118,8 @@ const ShopRefactor = () => {
                     </div>
                 </div>
             </section>
+
+            {/* Shopping Cart */}
             <hr />
             <section id='shoppingCart'>
                 <h1 className='text-center' style={{ fontFamily: "Booter" }}>Shopping Cart</h1>
