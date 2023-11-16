@@ -10,7 +10,7 @@ const FormTodoList = ({ todoTitle, addTodoSubmitHandler, textChangeHandler, stat
                         <button className="btn btn-outline-secondary text-primary fs-4" type='submit' style={{ fontSize: 25 }}><MdAddBox /></button>
                     </div>
                 </div>
-                <div className="col-md-4 offset-1 ">
+                <div className="col-md-4 offset-md-1 ">
                     <select className="form-select form-select-lg mb-3" dir='rtl' onChange={statusOnchangeHandler}>
                         <option value="All">همه</option>
                         <option value="Completed">انجام شده</option>

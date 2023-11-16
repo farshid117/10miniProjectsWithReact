@@ -39,27 +39,30 @@ const TodoListRefactor = () => {
             setTodoTitle("")
         }
     }
-    const checkedHandler = (event, todoId) => {
+    const checkedHandler = (todoId) => {
         let todoIndex = todos.findIndex(todo => todo.id === todoId)
         let todo = todos.find(todo => todo.id === todoId)
-        todo.completed = !todo.completed
-        todo.checked = !todo.checked
+        todo.completed = ! todo.completed
+        todo.checked = ! todo.checked
         let copyTodos = [...todos]
         copyTodos[todoIndex] = todo
         setTodos(copyTodos)
     }
-    const confirmDeleteHandler = (event, id) => {
+    const statusOnchangeHandler = (event) => {
+        setStatus(event.target.value) //for <select> elements
+    }
+    const confirmDeleteHandler = (id) => {
         confirmAlert({
             customUI: ({ onClose }) => {
                 return (
-                    <div className='custom-ui bg-info p-5 rounded-5' style={{ fontFamily: "Vazir" }} >
-                        <h1 className='text-dark'>آیا مطمئن هستی</h1>
+                    <div className='custom-ui bg-primary-subtle p-5 rounded-3' style={{ fontFamily: "Vazir" }} >
+                        <h3 className='text-dark'>آیا مطمئن هستی</h3>
                         <p className='text-dark'>که میخواهی این کار را حذف کنی؟</p>
 
                         <button
                             className='btn btn-danger me-2'
                             onClick={() => {
-                                removeHandler(event, id);
+                                removeHandler(id);
                                 onClose();
                             }}
                         >
@@ -71,7 +74,7 @@ const TodoListRefactor = () => {
             }
         });
     }
-    const removeHandler = (event, todoId) => {
+    const removeHandler = (todoId) => {
 
         let newTodos = todos.filter(todo => todo.id !== todoId)
         setTodos(newTodos)
@@ -86,9 +89,7 @@ const TodoListRefactor = () => {
             theme: "light",
         });
     }
-    const statusOnchangeHandler = (event) => {
-        setStatus(event.target.value) //for <select> elements
-    }
+   
 
 
     return (
