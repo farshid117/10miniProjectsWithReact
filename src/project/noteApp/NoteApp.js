@@ -1,16 +1,14 @@
+import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { toast } from 'react-toastify'
 import { confirmAlert } from 'react-confirm-alert';
 import { Helmet } from 'react-helmet-async';
 
-import { FaEraser } from 'react-icons/fa'
-import { VscDiffAdded } from 'react-icons/vsc'
-
 import Header from './Header'
-import ColorBox from './ColorBox'
-import Note from './Note'
+import NoteForm from './NoteForm';
+import NoteList from './NoteList';
+
 import "./NoteApp.css"
-import { useState } from 'react';
 
 const NoteApp = () => {
 
@@ -19,17 +17,17 @@ const NoteApp = () => {
     const [notes, setNotes] = useState([])
     const [colors,] = useState([
 
-                                "#fff",
-                                "#FFD37F",
-                                "#FFFA81",
-                                "#D5FA80",
-                                "#78F87F",
-                                "#79FBD6",
-                                "#79FDFE",
-                                "#7AD6FD",
-                                "#7B84FC",
-                                "#D687FC",
-                                "#FF89FD",
+        "#fff",
+        "#FFD37F",
+        "#FFFA81",
+        "#D5FA80",
+        "#78F87F",
+        "#79FBD6",
+        "#79FDFE",
+        "#7AD6FD",
+        "#7B84FC",
+        "#D687FC",
+        "#FF89FD",
     ])
 
     const noteTitleChangeHandler = (event) => {
@@ -103,49 +101,33 @@ const NoteApp = () => {
                 <title>اپلیکیشن یادداشت | 10 مینی پروژه ری‌اکت</title>
             </Helmet>
             <Header />
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-8">
-                        <form onSubmit={(event)=>addNote(event)}>
-                            <input
-                                type="text"
-                                className='form-control'
-                                value={noteTitle}
-                                onChange={(event) => noteTitleChangeHandler(event)}
-                                style={{ background: inputColor }}
-                                placeholder='یادداشت خود را بنویسید...'
-                            />
-
-                            <div className="d-flex justify-content-start mt-2 flex-row-reverse">
-                                <ColorBox colors={colors} inputColorChangeHandler={inputColorChangeHandler} />
-                            </div>
-
-                            <div className="mt-3">
-                                <button className="btn btn-danger d-inline-block me-2 Btn2"><FaEraser /></button>
-                                <button type='submit' className="btn btn-primary d-inline-block"><VscDiffAdded /></button>
-                            </div>
-                        </form>
+            {/*todo FormNote */}
+            <section id='form-note'>
+                <div className="container">
+                    <div className="row justify-content-center">
+                        <div className="col-md-8">
+                          <NoteForm 
+                                noteTitle={noteTitle}
+                                colors={colors}
+                                inputColor={inputColor}
+                                addNote={addNote}
+                                noteTitleChangeHandler={noteTitleChangeHandler}
+                                inputColorChangeHandler={inputColorChangeHandler}
+                          />
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                {/*todo Note Card */}
-                <section id='note-container' className='mt-4'>
+            {/*todo NoteList Crad */}
+            <section id='note-list' className='mt-4'>
+                <div className="container">
                     <div className="row">
-
-                        {notes.length > 0 &&
-                            notes.map(note => (
-                                <Note
-                                    key={note.id}
-                                    {...note}
-                                    removeNoteHandler={confirmDeleteHandler} />
-                            ))
-                        }
-
+                        <NoteList notes={notes} confirmDeleteHandler={confirmDeleteHandler} />
                     </div>
+                </div>
+            </section>
 
-                </section>
-
-            </div>
         </div>
     );
 

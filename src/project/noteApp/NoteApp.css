@@ -12,9 +12,16 @@ body {
 
 
 }
-::-webkit-scrollbar{
-    display: none ;
+
+::-webkit-scrollbar {
+    display: none;
 }
+
+::-webkit-input-placeholder {
+    font-size: 14px !important;
+    color: #333;
+}
+
 .NoteApp {
     height: 100vh !important;
     overflow-y: scroll !important;
@@ -38,10 +45,7 @@ header p {
     }
 }
 
-::-webkit-input-placeholder {
-    font-size: 14px !important;
-    color: #333;
-}
+
 
 .Btn2:hover {
     background: #d63384 !important;
