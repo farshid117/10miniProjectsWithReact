@@ -92,7 +92,20 @@ const NoteApp = () => {
             theme: "light",
         });
     }
-
+    const removeAllHandler = () => {
+        setNotes([])
+        
+        toast.error('همه یادداشت ها حذف گردید', {
+            position: "bottom-center",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+    }
 
 
     return (
@@ -113,6 +126,9 @@ const NoteApp = () => {
                                 addNote={addNote}
                                 noteTitleChangeHandler={noteTitleChangeHandler}
                                 inputColorChangeHandler={inputColorChangeHandler}
+                                removeAll={removeAllHandler}
+                               
+
                           />
                         </div>
                     </div>
