@@ -8,15 +8,15 @@ class NavbarLogin extends Component {
     render() {
         return (
             <>
-                <Container fluid className='p-0' >
-                    <Navbar collapseOnSelect expand="lg" bg="primary" variant='dark' >
-                        <Container fluid>
-                            <Navbar.Brand href="#" className='fw-bold'>بیمه آنلاین</Navbar.Brand>
+                <Container fluid className='p-0 '  >
+                    <Navbar collapseOnSelect expand="lg" fixed="top" bg="primary" variant='dark' >
+                        <Container fluid="md" >
+                            <Navbar.Brand href="#" className='fw-bold'>AliCoder.ir</Navbar.Brand>
                             <Navbar.Toggle aria-controls="navbarScroll" />
                             <Navbar.Collapse id="navbarScroll">
                                 <Nav
                                     className="me-auto my-2 my-lg-0"
-                                    style={{ maxHeight: '100px' }}
+                                    style={{ maxHeight: '300px' }}
                                     navbarScroll
                                 >
                                     <Nav.Link href="/">خانه</Nav.Link>
@@ -41,12 +41,13 @@ class NavbarLogin extends Component {
                                         placeholder="جستجو کنید ..."
                                         className="me-2"
                                     />
-                                    <Button variant="success">Search</Button>
+                                    <Button variant="success">جستجو</Button>
                                 </Form>
                             </Navbar.Collapse>
                         </Container>
                     </Navbar>
                 </Container>
+             
             </>
         );
     }

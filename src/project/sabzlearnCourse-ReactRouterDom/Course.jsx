@@ -15,14 +15,14 @@ const Course = (props) => {
                                 component="img"
                                 height="250"
                                 image={img}
-                                alt="green iguana"
+                                alt={`img-${id}`}
                                 className='img-fluid'
                             />
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="div" >
+                                <Typography gutterBottom variant="h5" component="div" className='fw-bold'>
                                     {title}
                                 </Typography>
-                                <Typography variant="body2" color="text.secondary" sx={{ textAlign: "justify" }}>
+                                <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
                                     <EllipsisText text={description} length={"200"} />
                                 </Typography>
                             </CardContent>

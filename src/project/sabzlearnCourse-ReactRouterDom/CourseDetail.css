@@ -1,4 +1,8 @@
-.CourseDetail{
+.CourseDetail {
     height: 100vh !important;
     overflow-y: scroll !important;
+}
+
+.justify{
+    text-align: justify !important;
 }

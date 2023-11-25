@@ -13,7 +13,7 @@ export { default as FetchApi } from "./fetchapi/FetchApi"
 
 export { default as Courses } from "./sabzlearnCourse-ReactRouterDom/Courses"
 export { default as CoursesData } from "./sabzlearnCourse-ReactRouterDom/CoursesData"
-export { default as Header } from "./sabzlearnCourse-ReactRouterDom/Header"
+export { default as MainCourse } from "./sabzlearnCourse-ReactRouterDom/MainCourse"
 export { default as CourseDetail } from "./sabzlearnCourse-ReactRouterDom/CourseDetail"
 export { default as About } from "./sabzlearnCourse-ReactRouterDom/about/About"
 export { default as Dashboard } from "./sabzlearnCourse-ReactRouterDom/about/Dashboard"

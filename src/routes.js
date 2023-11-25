@@ -1,6 +1,6 @@
 import {
     Courses, CourseDetail, About, Dashboard, Setting, LoginForm, Panel,
-    PrivateRoute, Users, Header, ShopRefactor, TodoListRefactor, NoteApp, Ticket,
+    PrivateRoute, Users, MainCourse, ShopRefactor, TodoListRefactor, NoteApp, Ticket,
     AddBook, Login2, AppTen
 } from './project';
 import Practice from './practice';
@@ -24,7 +24,7 @@ let routes = [
     /* Nested Route */
     {
         path: '/rrd',
-        element: <Header />,
+        element: <MainCourse />,
         children: [
             { path: 'courses', element: <Courses /> },
             { path: 'courses/:courseId', element: <CourseDetail /> },

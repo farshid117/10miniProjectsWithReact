@@ -12,10 +12,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 
   <React.StrictMode>
-    <ThemeProvider dir="rtl"
-      breakpoints={['xxl', 'xl', 'lg', 'md', 'sm', 'xs']}
-      minBreakpoint="xs"
-    >
+    <ThemeProvider dir="rtl"> {/* for rtl react-bootstrap */} 
       <BrowserRouter>
         <App />
       </BrowserRouter>

@@ -2,9 +2,11 @@ import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
-import { AppBar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem,
-    ListItemButton, Menu, Toolbar, Typography, Button } from '@mui/material';
-
+import {
+    AppBar, Toolbar, Box, CssBaseline, Divider, Drawer, IconButton, List, ListItem,
+    ListItemButton, Typography, Button
+} from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu'
 
 import "./Header.css"
 
@@ -22,7 +24,7 @@ const Header = () => {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                بیمه آنلاین
+                لوگوی شرکت
             </Typography>
             <Divider />
             <List>
@@ -77,9 +79,9 @@ const Header = () => {
             <Helmet>
                 <title>نمایش دوره‌ها | 10 مینی پروژه ری‌اکت</title>
             </Helmet>
-            <Box sx={{ display: 'sticky' }}>
+            <Box>
                 <CssBaseline />
-                <AppBar position="sticky" >
+                <AppBar position="fixed" >
                     <Toolbar>
                         <IconButton
                             color="inherit"
@@ -88,14 +90,14 @@ const Header = () => {
                             onClick={handleDrawerToggle}
                             sx={{ mr: 2, display: { md: 'none' } }}
                         >
-                            <Menu /> {/* MenuIcon */}
+                            <MenuIcon /> {/* MenuIcon */}
                         </IconButton>
                         <Typography
                             variant="h6"
                             component="div"
                             sx={{ mr: 5, display: { xs: 'none', md: 'block' }, fontSize: 25, fontWeight: "Bold" }}
                         >
-                            بیمه آنلاین
+                            لوگوی شرکت
                         </Typography>
                         <Box sx={{ display: { xs: 'none', md: 'block' } }}>
 
@@ -111,10 +113,14 @@ const Header = () => {
                             <Button>
                                 <NavLink to="about" style={({ isActive }) => ({ marginRight: 20, color: "#fff", fontSize: 17, padding: "5px 10px", borderRadius: "10px", background: isActive ? "red" : null })}>درباره‌ما</NavLink>
                             </Button>
+
+                            <Button>
+                                <NavLink to="panel" style={({ isActive }) => ({ marginRight: 20, color: "#fff", fontSize: 17, padding: "5px 10px", borderRadius: "10px", background: isActive ? "red" : null })}>تماس‌با‌ما</NavLink>
+                            </Button>
                             <Button>
                                 <Dropdown>
                                     <Dropdown.Toggle id="dropdown-basic">
-                                        فایربیس پروگ
+                                        پنل کاربری
                                     </Dropdown.Toggle>
 
                                     <Dropdown.Menu>
@@ -137,15 +143,12 @@ const Header = () => {
                                 </Dropdown>
                             </Button>
 
-                            <Button>
-
-                                <NavLink to="panel" style={({ isActive }) => ({ marginRight: 20, color: "#fff", fontSize: 17, padding: "5px 10px", borderRadius: "10px", background: isActive ? "red" : null })}>پنل کاربری</NavLink>
-                            </Button>
 
                         </Box>
                     </Toolbar>
                 </AppBar>
-                
+                <Toolbar />
+
                 <Box component="nav">
                     <Drawer
                         variant="temporary"

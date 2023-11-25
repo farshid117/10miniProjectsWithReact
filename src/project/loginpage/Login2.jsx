@@ -1,24 +1,25 @@
 import React, { Component } from 'react'
 import { Helmet } from 'react-helmet-async';
-import {Container, Row, Col, Image, Form, Button} from "react-bootstrap"
+import { Container, Row, Col, Image, Form, Button } from "react-bootstrap"
 
 import NavbarLogin from "./Navbar"
 
 class Login2 extends Component {
-    state = {  } 
-    render() { 
+    state = {}
+    render() {
         return (
-            <div style={{height: "auto", overflow: "hidden "}} >
+            <div
+             style={{ height: "auto", overflow: "hidden",}}
+             
+             >
                 <Helmet>
                     <title>صفحه لاگین | 10 مینی پروژه ری‌اکت</title>
                 </Helmet>
                 <NavbarLogin />
-                <Container >
-                    <Row className='mt-5 align-items-center ' >
-                        <Col xs={12} md={6} className='text-center'>
-                            <Image src='img/111.png' fluid  style={{display: "imline-block", width:"70%"}}/>
-                        </Col>
-                        <Col xs={12} md={6}>
+
+                <Container style={{height:"100vh"}} >
+                    <Row className='align-items-center  h-100 ' >
+                        <Col xs={12} md={4}>
                             <Form>
                                 <Form.Group className="mb-3" controlId="formBasicEmail">
                                     <Form.Label>ایمیل : </Form.Label>
@@ -27,9 +28,9 @@ class Login2 extends Component {
 
                                 <Form.Group className="mb-3" controlId="formBasicPassword">
                                     <Form.Label>پسورد :</Form.Label>
-                                    <Form.Control type="password" placeholder="Password" />
+                                    <Form.Control type="password" placeholder="پسورد" />
                                 </Form.Group>
-                                
+
                                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                                     <Form.Check type="checkbox" label="قوانین را مطالعه کردم و قبول دارم" />
                                 </Form.Group>
@@ -38,12 +39,23 @@ class Login2 extends Component {
                                 </Button>
                             </Form>
                         </Col>
+
+                        <Col xs={12} md={{ span: 7, offset: 1 }} className='text-center'>
+                            <Image src='img/114.jpg' fluid
+                                style={{
+                                    display: "inline-block",
+                                    borderRadius: 30,
+                                    border: "3px solid rgba(255,255,255)"
+                                }}
+                            />
+                        </Col>
                     </Row>
                 </Container>
-
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </div>
         );
     }
 }
- 
+
 export default Login2;
