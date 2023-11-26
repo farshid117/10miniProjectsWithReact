@@ -8,34 +8,32 @@ const Course = (props) => {
     return (
         <>
             <Grid xs={12} md={6} lg={4} >
-                <Link to={`${id}`}>
-                    <Card className='h-100' >
-                        <CardActionArea>
-                            <CardMedia
-                                component="img"
-                                height="250"
-                                image={img}
-                                alt={`img-${id}`}
-                                className='img-fluid'
-                            />
-                            <CardContent>
-                                <Typography gutterBottom variant="h5" component="div" className='fw-bold'>
-                                    {title}
-                                </Typography>
-                                <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                                    <EllipsisText text={description} length={"200"} />
-                                </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
+                <Card className='h-100' >
+                    <CardActionArea>
+                        <CardMedia
+                            component="img"
+                            height="250"
+                            image={img}
+                            alt={`img-${id}`}
+                            className='img-fluid'
+                        />
+                        <CardContent>
+                            <Typography gutterBottom variant="h5" component="div" className='fw-bold'>
+                                {title}
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
+                                <EllipsisText text={description} length={"200"} />
+                            </Typography>
+                        </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                        <Link to={`${id}`}>
                             <Button variant='contained' size="small" color="primary">
-                                خرید
+                                جزئیات بیشتر
                             </Button>
-                        </CardActions>
-                    </Card>
-
-                </Link>
-
+                        </Link>
+                    </CardActions>
+                </Card>
             </Grid>
 
 
