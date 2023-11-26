@@ -7,7 +7,7 @@ const Course = (props) => {
     const { id, title, description, img } = props;
     return (
         <>
-            <Grid xs={12} md={6} lg={4} >
+            <Grid xs={12} md={4} lg={3} >
                 <Card className='h-100' >
                     <CardActionArea>
                         <CardMedia
@@ -22,7 +22,7 @@ const Course = (props) => {
                                 {title}
                             </Typography>
                             <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                                <EllipsisText text={description} length={"200"} />
+                                <EllipsisText text={description} length={100} />
                             </Typography>
                         </CardContent>
                     </CardActionArea>

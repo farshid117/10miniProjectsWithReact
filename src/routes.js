@@ -12,7 +12,7 @@ import NewUser from './project/EnglishCsmProject/pages/NewUser/NewUser';
 import Products from './project/EnglishCsmProject/pages/Products/Products';
 import ProductDetails from './project/EnglishCsmProject/pages/Products/ProductDetails';
 
-let routes = [
+export let routes = [
     {
         path: '/',
         element: <Main />
@@ -28,8 +28,7 @@ let routes = [
         children: [
             { path: 'courses', element: <Courses /> },
             { path: 'courses/:courseId', element: <CourseDetail /> },
-            {
-                path: 'about', element: <About />,
+            { path: 'about', element: <About />,
                 children: [
                     { path: 'dashboard', element: <Dashboard /> },
                     { path: 'setting', element: <Setting /> },
@@ -68,4 +67,3 @@ let routes = [
 
 ]
 
-export default routes

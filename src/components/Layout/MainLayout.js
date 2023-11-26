@@ -21,10 +21,8 @@ const MainLayout = ({ children }) => {
         <CacheProvider value={cacheRtl}>
             <ThemeProvider theme={theme}>
                 <HelmetProvider>
-                    
                     {children}
                 </HelmetProvider>
-
             </ThemeProvider>
         </CacheProvider>
 
