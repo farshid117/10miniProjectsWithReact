@@ -1,7 +1,7 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { isLogin } from "./utils";
 
-const PrivateRoute = ({children}) => {
+const PrivateRoute = () => {
     let isLoginUser = isLogin("ali")
     return (
         <div>

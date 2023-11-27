@@ -26,6 +26,7 @@ export let routes = [
         path: '/rrd',
         element: <MainCourse />,
         children: [
+         
             { path: 'courses', element: <Courses /> },
             { path: 'courses/:courseId', element: <CourseDetail /> },
             { path: 'about', element: <About />,
@@ -40,6 +41,7 @@ export let routes = [
                 path: '*', element: <PrivateRoute />,
                 children: [
                     { path: "panel", element: <Panel /> },
+                    { path: "ali", element: <p className='fw-bold mt-5 text-center text-light'>پسر خوب یه مسیر درست وارد کن</p> },
                 ]
             },
         ]

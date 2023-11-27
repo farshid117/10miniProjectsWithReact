@@ -18,11 +18,11 @@ const Course = (props) => {
                             className='img-fluid'
                         />
                         <CardContent>
-                            <Typography gutterBottom variant="h5" component="div" className='fw-bold'>
+                            <Typography gutterBottom variant="h6" component="div" className='fw-bold'>
                                 {title}
                             </Typography>
                             <Typography variant="body1" color="text.secondary" sx={{ textAlign: "justify" }}>
-                                <EllipsisText text={description} length={100} />
+                                <EllipsisText text={description} length={85} />
                             </Typography>
                         </CardContent>
                     </CardActionArea>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import { Dropdown } from 'react-bootstrap';
 import { Helmet } from 'react-helmet-async';
 import {
@@ -142,8 +142,6 @@ const Header = () => {
                                     </Dropdown.Menu>
                                 </Dropdown>
                             </Button>
-
-
                         </Box>
                     </Toolbar>
                 </AppBar>
@@ -168,7 +166,7 @@ const Header = () => {
 
             </Box>
 
-            <Outlet />
+       
         </div>
     );
 }
