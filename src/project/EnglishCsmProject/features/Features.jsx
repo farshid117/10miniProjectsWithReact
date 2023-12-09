@@ -3,8 +3,8 @@ import "./Features.css"
 import { Card } from 'react-bootstrap';
 import { ArrowDownward, ArrowUpward } from '@mui/icons-material';
 
-const Features = (props) => {
-    const { variant, textColor = "light", arrow, title, telotance } = props
+const Features = ({ variant, textColor = "light", arrow, title, telotance }) => {
+   
     return (
         <>
             <Card

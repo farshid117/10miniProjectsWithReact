@@ -24,7 +24,7 @@ export default function Sidebar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">داشبورد</h3>
           <ul className="sidebarList">
-            <NavLink to="*" className="link" style={({isActive}) =>{ 
+            <NavLink to="home" className="link" style={({isActive}) =>{ 
             return {
               display:"block",
               backgroundColor: isActive? "rgb(121,180,255)" : "",
