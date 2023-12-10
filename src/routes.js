@@ -14,6 +14,7 @@ import {
     ProductDetails,
     NotFound
 } from "./project/EnglishCsmProject/pages"
+import { Navigate } from 'react-router-dom';
 
 export let routes = [
     {
@@ -61,6 +62,7 @@ export let routes = [
     {
         path: '/cmsproject', element: <AppTen />,
         children: [
+            { path: '', element: <Navigate to="home" /> },
             { path: 'home', element: <Home /> },
             { path: 'users', element: <UserList />, },
             { path: 'users/edit/:id', element: <UserDetails /> },
