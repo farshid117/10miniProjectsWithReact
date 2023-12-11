@@ -30,14 +30,14 @@ export default function Topbar() {
   const matches = useMediaQuery('(min-width:768px)');
   console.log("matches: ", matches);
 
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   const handleDrawerToggle = () => {
-    setMobileOpen((prevState) => !prevState);
+    setDrawerOpen((prevState) => !prevState);
   };
 
   useEffect(() => {
-    if (matches) setMobileOpen(false);
+    if (matches) setDrawerOpen(false);
   }, [matches])
 
   const sidebarDrawr = (
@@ -46,18 +46,18 @@ export default function Topbar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">داشبورد</h3>
           <ul className="sidebarList">
-            <NavLink to="home" className="link" style={({ isActive }) => {
-              return {
-                display: "block",
-                backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                borderRadius: 10
-              }
-            }}>
-              <li className="sidebarListItem active" >
+            <li className="sidebarListItem active" >
+              <NavLink to="home" className="link" style={({ isActive }) => {
+                return {
+                  display: "block",
+                  backgroundColor: isActive ? "rgb(121,180,255)" : "",
+                  borderRadius: 10
+                }
+              }}>
                 <LineStyleIcon className="sidebarIcon" />
                 خانه
-              </li>
-            </NavLink>
+              </NavLink>
+            </li>
             <li className="sidebarListItem">
               <TimelineIcon className="sidebarIcon" />
               آنالیز و گزارش
@@ -71,42 +71,42 @@ export default function Topbar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">منوی سریع</h3>
           <ul className="sidebarList">
-            <NavLink to="users" className="link" style={({ isActive }) => {
-              return {
-                display: "block",
-                backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                borderRadius: 10
-              }
-            }}>
-              <li className="sidebarListItem">
+            <li className="sidebarListItem">
+              <NavLink to="users" className="link" style={({ isActive }) => {
+                return {
+                  display: "block",
+                  backgroundColor: isActive ? "rgb(121,180,255)" : "",
+                  borderRadius: 10
+                }
+              }}>
                 <PermIdentityIcon className="sidebarIcon" />
                 لیست یوزرها
-              </li>
-            </NavLink>
-            <NavLink to="newUser" className="link" style={({ isActive }) => {
-              return {
-                display: "block",
-                backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                borderRadius: 10
-              }
-            }}>
-              <li className="sidebarListItem">
+              </NavLink>
+            </li>
+            <li className="sidebarListItem">
+              <NavLink to="newUser" className="link" style={({ isActive }) => {
+                return {
+                  display: "block",
+                  backgroundColor: isActive ? "rgb(121,180,255)" : "",
+                  borderRadius: 10
+                }
+              }}>
                 <PermIdentityIcon className="sidebarIcon" />
                 ایجاد یوزر جدید
-              </li>
-            </NavLink>
-            <NavLink to="products" className="link" style={({ isActive }) => {
-              return {
-                display: "block",
-                backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                borderRadius: 10
-              }
-            }}>
-              <li className="sidebarListItem">
+              </NavLink>
+            </li>
+            <li className="sidebarListItem">
+              <NavLink to="products" className="link" style={({ isActive }) => {
+                return {
+                  display: "block",
+                  backgroundColor: isActive ? "rgb(121,180,255)" : "",
+                  borderRadius: 10
+                }
+              }}>
                 <StorefrontIcon className="sidebarIcon" />
                 محصولات
-              </li>
-            </NavLink>
+              </NavLink>
+            </li>
             <li className="sidebarListItem">
               <AttachMoneyIcon className="sidebarIcon" />
               تراکنش‌ها
@@ -158,8 +158,8 @@ export default function Topbar() {
     <div className="topbar">
       <div className="topbarWrapper2">
         <div className="px-3 position-relative">
-          <Row className="align-items-center w-100 justify-content-center 
-               justify-content-md-end ">
+
+          <Row className="align-items-center w-100 justify-content-center justify-content-md-end ">
             <Col xs={12} md={6} className="">
               <div className="topLeft text-center text-md-start mt-2 mt-md-0">
                 <Link to="/" className="logo"><span className="text-danger">❤</span> AliCoder </Link>
@@ -185,25 +185,26 @@ export default function Topbar() {
               </div>
             </Col>
 
-            <div className="position-absolute d-md-none" style={{ top: 0, left: 0, zIndex: 100000, color: "#000" }}>
+            <div className="position-absolute d-md-none" style={{ top: 3, right: 20, zIndex: 100000, color: "#000" }}>
               <IconButton
                 color="inherit"
                 aria-label="open drawer"
-                edge="end"
+                edge="start"
                 onClick={handleDrawerToggle}
                 sx={{ mr: 0, }}
               >
-                <MenuIcon />
+                <MenuIcon sx={{ fontSize: 30 }} />
               </IconButton>
 
             </div>
           </Row>
+
         </div>
       </div>
       {/* todo: Drawer */}
       <Drawer
         variant="temporary"
-        open={mobileOpen}
+        open={drawerOpen}
         onClick={handleDrawerToggle}
         onClose={handleDrawerToggle}
         ModalProps={{

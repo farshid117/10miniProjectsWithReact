@@ -49,8 +49,8 @@
     font-size: 10px;
 
     position: absolute;
-    top: -2px;
-    right: 0;
+    top: -8px;
+    right: -5px;
 
     display: flex;
     align-items: center;

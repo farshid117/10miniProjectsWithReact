@@ -19,16 +19,19 @@ import "./Sidebar.css";
 
 export default function Sidebar() {
   return (
-    <div className="sidebar d-none d-md-block" style={{width:"200px"}}>
+    <div className="sidebar d-none d-md-block" style={{ width: "200px" }}>
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">داشبورد</h3>
           <ul className="sidebarList">
-            <NavLink to="home" className="link" style={({isActive}) =>{ 
-            return {
-              display:"block",
-              backgroundColor: isActive? "rgb(121,180,255)" : "",
-              borderRadius: 10
+            <NavLink to="home" className="link" style={({ isActive }) => {
+              return {
+                width: "100%",
+                height: "100%",
+                p: "10px",
+                display: "block",
+                backgroundColor: isActive ? "#bd93f9" : "",
+                borderRadius: 5
               }
             }}>
               <li className="sidebarListItem active" >
@@ -53,7 +56,7 @@ export default function Sidebar() {
               return {
                 display: "block",
                 backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                borderRadius: 10
+                borderRadius:5
               }
             }}>
               <li className="sidebarListItem">
@@ -65,7 +68,7 @@ export default function Sidebar() {
               return {
                 display: "block",
                 backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                borderRadius: 10
+                borderRadius:5
               }
             }}>
               <li className="sidebarListItem">
@@ -77,7 +80,7 @@ export default function Sidebar() {
               return {
                 display: "block",
                 backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                borderRadius: 10
+                borderRadius: 5
               }
             }}>
               <li className="sidebarListItem">
