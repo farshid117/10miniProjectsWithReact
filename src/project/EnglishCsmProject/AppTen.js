@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet-async'
 import { Outlet } from 'react-router-dom'
+import { Col, Row } from "react-bootstrap";
 
 import Topbar from './components/topbar/Topbar'
 import Sidebar from './components/sidebar/Sidebar'
@@ -14,17 +15,21 @@ export default function AppTen() {
                 <Helmet>
                     <title>پنل مدیریت | 10 مینی پروژه ری‌اکت</title>
                 </Helmet>
-                <Topbar />
+                <Row>
+                    <Col xs={12}>
+                        <Topbar />
+                    </Col>
+                </Row>
                 <div>
-                    <div className="row">
-                        <div className="col-md-3 col-lg-3 col-xl-2">
+                    <Row>
+                        <Col md={3} xl={2}>
                             <Sidebar />
-                        </div>
+                        </Col>
 
-                        <div className="col-md-9 col-lg-9 col-xl-10">
+                        <Col md={9} xl={10}>
                             <Outlet /> {/* in base of routes can be: Home, Users, newUser, Product */}
-                        </div>
-                    </div>
+                        </Col>
+                    </Row>
                 </div>
             </div>
         </>
