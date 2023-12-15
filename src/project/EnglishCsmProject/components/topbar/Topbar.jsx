@@ -42,22 +42,42 @@ export default function Topbar() {
 
   const sidebarDrawr = (
     <div className="sidebar mt-5" >
+      <Row>
+        <Col>
+          <div className="topRight d-flex justify-content-center">
+            <div className="topbarIconContainer">
+              <NotificationsIcon />
+              <span className="topIconBadge">2</span>
+            </div>
+            <div className="topbarIconContainer">
+              <LanguageIcon />
+              <span className="topIconBadge">2</span>
+            </div>
+            <div className="topbarIconContainer">
+              <SettingsIcon />
+            </div>
+            <div>
+              <img src={khodam} className="topAvatar ms-1" alt="khodam" />
+            </div>
+          </div>
+        </Col>
+      </Row>
       <div className="sidebarWrapper">
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">داشبورد</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem active" >
-              <NavLink to="home" className="link" style={({ isActive }) => {
-                return {
-                  display: "block",
-                  backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                  borderRadius: 10
-                }
-              }}>
+            <NavLink to="home" className="link" style={({ isActive }) => {
+              return {
+                display: "block",
+                backgroundColor: isActive ? "rgb(121,180,255)" : "",
+                borderRadius: 10
+              }
+            }}>
+              <li className="sidebarListItem active" >
                 <LineStyleIcon className="sidebarIcon" />
                 خانه
-              </NavLink>
-            </li>
+              </li>
+            </NavLink>
             <li className="sidebarListItem">
               <TimelineIcon className="sidebarIcon" />
               آنالیز و گزارش
@@ -71,18 +91,18 @@ export default function Topbar() {
         <div className="sidebarMenu">
           <h3 className="sidebarTitle">منوی سریع</h3>
           <ul className="sidebarList">
-            <li className="sidebarListItem">
-              <NavLink to="users" className="link" style={({ isActive }) => {
-                return {
-                  display: "block",
-                  backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                  borderRadius: 10
-                }
-              }}>
+            <NavLink to="users" className="link" style={({ isActive }) => {
+              return {
+                display: "block",
+                backgroundColor: isActive ? "rgb(121,180,255)" : "",
+                borderRadius: 10
+              }
+            }}>
+              <li className="sidebarListItem">
                 <PermIdentityIcon className="sidebarIcon" />
                 لیست یوزرها
-              </NavLink>
-            </li>
+              </li>
+            </NavLink>
             <li className="sidebarListItem">
               <NavLink to="newUser" className="link" style={({ isActive }) => {
                 return {
@@ -95,18 +115,18 @@ export default function Topbar() {
                 ایجاد یوزر جدید
               </NavLink>
             </li>
-            <li className="sidebarListItem">
-              <NavLink to="products" className="link" style={({ isActive }) => {
-                return {
-                  display: "block",
-                  backgroundColor: isActive ? "rgb(121,180,255)" : "",
-                  borderRadius: 10
-                }
-              }}>
+            <NavLink to="products" className="link" style={({ isActive }) => {
+              return {
+                display: "block",
+                backgroundColor: isActive ? "rgb(121,180,255)" : "",
+                borderRadius: 10
+              }
+            }}>
+              <li className="sidebarListItem">
                 <StorefrontIcon className="sidebarIcon" />
                 محصولات
-              </NavLink>
-            </li>
+              </li>
+            </NavLink>
             <li className="sidebarListItem">
               <AttachMoneyIcon className="sidebarIcon" />
               تراکنش‌ها
@@ -179,7 +199,7 @@ export default function Topbar() {
                 <div className="topbarIconContainer">
                   <SettingsIcon />
                 </div>
-                <div >
+                <div>
                   <img src={khodam} className="topAvatar ms-1" alt="khodam" />
                 </div>
               </div>
@@ -198,7 +218,6 @@ export default function Topbar() {
 
             </div>
           </Row>
-
         </div>
       </div>
       {/* todo: Drawer */}
