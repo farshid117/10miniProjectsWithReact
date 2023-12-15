@@ -25,7 +25,6 @@ const Features = ({ variant, textColor = "light", arrow, title, telotance }) => 
                                         : <ArrowUpward sx={{ color: "green", fontSize: 25 }} />
                                 }
                             </span>
-
                         </div>
                     </Card.Title>
                     <Card.Text className='cardText'>

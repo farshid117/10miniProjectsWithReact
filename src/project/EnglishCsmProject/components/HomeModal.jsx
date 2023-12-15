@@ -6,7 +6,7 @@ import Features from '../features/Features';
 import "./HomeModal.css"
 
 const HomeModal = ({ features }) => {
-    let matches = useMediaQuery('(min-width:768px)')
+    let matches = useMediaQuery('(min-width:768px)') //MUI
     console.log("matches in Feature component: ", matches);
     const [openModal, setOpenModal] = useState(false)
 
@@ -17,7 +17,7 @@ const HomeModal = ({ features }) => {
     return (
       <>
             <div className='text-center' >
-                <Button variant='primary' className='d-md-none' onClick={() => { setOpenModal((prev) => !prev) }} >Reports</Button>
+                <Button variant='primary' className='' onClick={() => { setOpenModal((prev) => !prev) }} >Reports</Button>
             </div>
             <Modal
                 show={openModal}
@@ -37,9 +37,9 @@ const HomeModal = ({ features }) => {
                 >
                     <div className="row justify-content-center mt-3">
                         {
-                            features.map((feature, index) => (
-                                <div className="col-10 ">
-                                    <Features key={index} {...feature} />
+                            features.map((feature) => (
+                                <div className="col-10">
+                                    <Features key={feature.title} {...feature} />
                                 </div>
                             ))
                         }

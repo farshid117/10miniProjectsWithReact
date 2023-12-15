@@ -35,16 +35,16 @@ export default function Sidebar() {
               }
             }}>
               <li className="sidebarListItem active" >
-                <LineStyleIcon className="sidebarIcon" />
+                <LineStyleIcon className="sidebarIcon me-2" />
                 خانه
               </li>
             </NavLink>
             <li className="sidebarListItem">
-              <TimelineIcon className="sidebarIcon" />
+              <TimelineIcon className="sidebarIcon me-2" />
               آنالیز و گزارش
             </li>
             <li className="sidebarListItem">
-              <TrendingUpIcon className="sidebarIcon" />
+              <TrendingUpIcon className="sidebarIcon me-2" />
               میزان فروش
             </li>
           </ul>
@@ -60,7 +60,7 @@ export default function Sidebar() {
               }
             }}>
               <li className="sidebarListItem">
-                <PermIdentityIcon className="sidebarIcon" />
+                <PermIdentityIcon className="sidebarIcon me-2" />
                 کاربران
               </li>
             </NavLink>
@@ -72,7 +72,7 @@ export default function Sidebar() {
               }
             }}>
               <li className="sidebarListItem">
-                <PermIdentityIcon className="sidebarIcon" />
+                <PermIdentityIcon className="sidebarIcon me-2" />
                 کاربر جدید
               </li>
             </NavLink>
@@ -84,16 +84,16 @@ export default function Sidebar() {
               }
             }}>
               <li className="sidebarListItem">
-                <StorefrontIcon className="sidebarIcon" />
+                <StorefrontIcon className="sidebarIcon me-2" />
                 محصولات
               </li>
             </NavLink>
             <li className="sidebarListItem">
-              <AttachMoneyIcon className="sidebarIcon" />
+              <AttachMoneyIcon className="sidebarIcon me-2" />
               تراکنش‌های مالی
             </li>
-            <li className="sidebarListItem">
-              <BarChartIcon className="sidebarIcon" />
+            <li className="sidebarListItem d-flex align-items-center">
+              <BarChartIcon className="sidebarIcon me-2" />
               گزارشات
             </li>
           </ul>
@@ -102,15 +102,15 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">اعلانات</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
-              <MailOutlineIcon className="sidebarIcon" />
+              <MailOutlineIcon className="sidebarIcon me-2" />
               ایمیل
             </li>
             <li className="sidebarListItem">
-              <DynamicFeedIcon className="sidebarIcon" />
+              <DynamicFeedIcon className="sidebarIcon me-2" />
               فیسبوک
             </li>
             <li className="sidebarListItem">
-              <ChatBubbleOutlineIcon className="sidebarIcon" />
+              <ChatBubbleOutlineIcon className="sidebarIcon me-2" />
               پیام‌ها
             </li>
           </ul>
@@ -119,15 +119,15 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">وظایف</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
-              <WorkOutlineIcon className="sidebarIcon" />
+              <WorkOutlineIcon className="sidebarIcon me-2" />
               مدیریت
             </li>
             <li className="sidebarListItem">
-              <TimelineIcon className="sidebarIcon" />
+              <TimelineIcon className="sidebarIcon me-2" />
               آنالیز و تحلیل
             </li>
             <li className="sidebarListItem">
-              <ReportIcon className="sidebarIcon" />
+              <ReportIcon className="sidebarIcon me-2" />
               سایر گزارشات
             </li>
           </ul>

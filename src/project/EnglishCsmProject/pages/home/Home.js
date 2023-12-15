@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useMediaQuery } from '@mui/material';
 
 import Features from '../../features/Features';
 import HomeModal from '../../components/HomeModal';
@@ -8,13 +9,14 @@ import { Button } from '@mui/material';
 import { Modal } from 'react-bootstrap';
 
 export default function Home() {
+  let matches = useMediaQuery('(min-width:768px)') //MUI
   const [features] = useState(
     [
-      { title: "Average", variant: "Light", textColor: "dark", arrow: "down", telotance: "-10.4" },
-      { title: "Sales", variant: "warning", textColor: "dark", arrow: "up", telotance: "+5.3" },
-      { title: "Cost", variant: "info", textColor: "dark", arrow: "down", telotance: "-3.2" },
+      { title: "Average", variant: "Light",   textColor: "dark", arrow: "down", telotance: "-10.4" },
+      { title: "Sales",   variant: "warning", textColor: "dark", arrow: "up",   telotance: "+5.3" },
+      { title: "Cost",    variant: "info",    textColor: "dark", arrow: "down", telotance: "-3.2" },
     ])
-  const [showMemberModal, setShowMemberModal] = useState(false)
+  const [showMemberModal, setShowMemberModal]   = useState(false)
   const [showTransacModal, setShowTransacModal] = useState(false)
 
   return (
@@ -22,17 +24,23 @@ export default function Home() {
       <section className="cardReport">
         <div className="card m-3 p-3" style={{ background: "rgba(255,255,255,.7)" }}>
           <div className="container">
-            <div className="row justify-content-around mt-3">
+            <div className="row justify-content-evenly align-items-center mt-3">
+            
               {
-                features.map((feature, index) => (
-                  <div className=" col-sm-8 col-md-5 col-lg-3 d-none d-md-block ">
-                    <Features key={index} {...feature} />
-                  </div>
-                ))
+                matches ? (
+                  features.map((feature) => (
+                    <div className=" col-sm-8 col-md-5 col-lg-3">
+                      <Features key={feature.title} {...feature} />
+                    </div>
+                  ))
+                ):(
+                    <div className='col-12'>
+                      <HomeModal features={features} />
+                    </div>
+                )
+               
               }
-              <div className='col-12 d-block d-md-none'>
-                <HomeModal features={features} />
-              </div>
+             
             </div>
           </div>
         </div>
