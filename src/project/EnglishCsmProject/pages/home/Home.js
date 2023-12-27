@@ -1,12 +1,14 @@
 import { useState } from 'react';
+
 import { useMediaQuery } from '@mui/material';
+import { Button } from '@mui/material';
+import Grid from '@mui/material/Unstable_Grid2';
+import { Modal } from 'react-bootstrap';
 
 import Features from '../../features/Features';
 import HomeModal from '../../components/HomeModal';
 import HomeChart from '../../components/HomeChart';
 import { data, NewJoinMember, LastTransaction } from "../../components"
-import { Button } from '@mui/material';
-import { Modal } from 'react-bootstrap';
 
 export default function Home() {
   let matches = useMediaQuery('(min-width:768px)') //MUI Hook
@@ -23,70 +25,71 @@ export default function Home() {
     <>
       <section className="cardReport">
         <div className="card m-3 p-3" style={{ background: "rgba(255,255,255,.7)" }}>
-          <div className="container">
-            <div className="row justify-content-evenly align-items-center mt-3">
-
+          <Grid container spacing={4}>
+            <Grid
+              display="flex"
+              alignItems="center"
+              justifyContent="space-evenly"
+              sx={{flexGrow:1}}
+            >
               {
                 matches ? (
                   features.map((feature) => (
-                    <div className=" col-sm-8 col-md-5 col-lg-3">
+                    <Grid sm={8} md={5} lg={3}>
                       <Features key={feature.title} {...feature} />
-                    </div>
+                    </Grid>
                   ))
                 ) : (
-                  <div className='col-12'>
+                  <Grid xs={12}>
                     <HomeModal features={features} />
-                  </div>
+                  </Grid>
                 )
 
               }
-
-            </div>
-          </div>
+            </Grid>
+          </Grid>
         </div>
       </section>
 
       <section id='chartReport' dir='ltr'>
-        <div className="container">
-          <div className="row mt-4 justify-content-center">
-            <div className="col-12">
+        <Grid container>
+          <Grid display="flex" justifyContent="center" sx={{ flexGrow:1 , mt:1}} >
+            <Grid xs>
               <HomeChart
                 data={data}
                 title="Chart Reports :"
                 datakeyX="month"
                 datakeyY="Price"
               />
-            </div>
-          </div>
-        </div>
-
+            </Grid>
+          </Grid>
+        </Grid>
       </section>
 
-      <section id='report-table'>
-
-        <div className="container">
-          <div className="row justify-content-between ">
+      <section id='report-table mt-5'>
+        <Grid container>
+          <Grid display="flex" justifyContent="space-between" sx={{flexGrow:1}}>
             {
               matches ? (
                 <>
                   {/* todo display Lg-Xl */}
-                  <div className='col-lg-6'>
-                    <h3 className="widgetTitle" style={{ direction: "ltr" }}>Transaction Reports:</h3>
+                  <Grid lg={6}>
+                    <h3 className="widgetTitle me-3" style={{ direction: "ltr" }}>Transaction Reports:</h3>
                     <div className="card m-2 p-3" style={{ background: "rgba(255,255,255,.9)" }}>
                       <LastTransaction />
                     </div>
-                  </div>
-                  <div className='col-lg-6'>
-                    <h3 className="widgetTitle" style={{ direction: "ltr" }}>Recently member :</h3>
+                  </Grid>
+                  <Grid lg={6}>
+                    <h3 className="widgetTitle me-3" style={{ direction: "ltr" }}>Recently member :</h3>
                     <div className="card m-2 p-3" style={{ background: "rgba(255,255,255,.9)" }}>
                       <NewJoinMember />
                     </div>
-                  </div>
+                  </Grid>
                 </>
               ) : (
                 <>
                   {/* todo display Xs-Sm-Md */}
-                  <div className='d-flex justify-content-center'>
+                  <div className='d-flex justify-content-center w-100'>
                     <Button
                       variant='contained'
                       color='secondary'
@@ -108,11 +111,7 @@ export default function Home() {
 
             }
 
-
-
-
-
-            {/* todo: Modals */}
+            {/* todo: memberModal */}
             <div className='memberModal'>
               <Modal show={showMemberModal}
                 fullscreen="lg-down"
@@ -127,6 +126,7 @@ export default function Home() {
                 </Modal.Body>
               </Modal>
             </div>
+            {/* todo: transactModal */}
             <div className='transactModal'>
               <Modal
                 show={showTransacModal}
@@ -144,8 +144,8 @@ export default function Home() {
               </Modal>
             </div>
 
-          </div>
-        </div>
+          </Grid>
+        </Grid>
       </section>
     </>
   );

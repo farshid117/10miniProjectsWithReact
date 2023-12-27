@@ -2,8 +2,8 @@ import { LineChart, Line, ResponsiveContainer, Legend, Tooltip, XAxis, YAxis, Ca
 const HomeChart = ({ title, data, datakeyX, datakeyY, grid }) => {
 
     return (
-        <div >
-            <h6 className='fw-bold' >{title}</h6>
+        <>
+            <h6 className='fw-bold mx-3' >{title}</h6>
             <div className="card m-3 py-5" style={{ background: "rgba(0,0,0,.5)" }}>
                 <ResponsiveContainer width="" height={180} respect={""}  >
                     <LineChart width={""} height={300} data={data} style={{ color: "red" }}
@@ -17,7 +17,7 @@ const HomeChart = ({ title, data, datakeyX, datakeyY, grid }) => {
                     </LineChart>
                 </ResponsiveContainer>
             </div>
-        </div>
+        </>
     );
 }
 
