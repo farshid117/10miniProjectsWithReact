@@ -61,16 +61,16 @@ export let routes = [
     /* todo: Routes of Dashboard Panel(CMS) Project */
     {
         path: '/cmsproject', element: <AppTen />,
-        children: [
-            { path: '', element: <Navigate to="home" /> },
-            { path: 'home', element: <Home /> },
-            { path: 'users', element: <UserList />, },
-            { path: 'users/edit/:id', element: <UserDetails /> },
-            { path: 'newUser', element: <NewUser /> },
-            { path: 'products', element: <Products /> },
-            { path: 'products/edit/:id', element: <ProductDetails /> },
-            { path: '*', element: <NotFound /> },
-        ]
+        children:[
+                { path: '', element: <Navigate to="home" /> },
+                { path: 'home', element: <Home /> },
+                { path: 'users', element: <UserList />, },
+                { path: 'users/edit/:id', element: <UserDetails /> },
+                { path: 'newUser', element: <NewUser /> },
+                { path: 'products', element: <Products /> },
+                { path: 'products/edit/:id', element: <ProductDetails /> },
+                { path: '*', element: <NotFound /> },
+            ]
     },
 
 

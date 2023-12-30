@@ -9,7 +9,7 @@ const Button = ({ type }) => {
 }
 const LastTransaction = () => {
     return (
-        <div className="table-responsive" >
+        <div className="table-responsive p-3" >
             <table className="table" style={{ direction: "ltr" }}>
                 <thead>
                     <tr>
@@ -32,7 +32,7 @@ const LastTransaction = () => {
                     </tr>
                     <tr>
                         <th scope="row">2</th>
-                        <td>yunes bagheri</td>
+                        <td>Maryam Khayatpour</td>
                         <td>12 may 2023</td>
                         <td>120_000</td>
                         <td className='text-center'>
@@ -41,7 +41,7 @@ const LastTransaction = () => {
                     </tr>
                     <tr>
                         <th scope="row">3</th>
-                        <td>yunes bagheri</td>
+                        <td>Simin esmaeili</td>
                         <td>12 may 2023</td>
                         <td>120_000</td>
                         <td className='text-center'>

@@ -11,7 +11,7 @@ import "./App.css"
 const App = () => {
   let router = useRoutes(routes) // routes is Array of objects
   
-  return (
+  return(
     <MainLayout>
       <div className="App">
       
@@ -20,7 +20,6 @@ const App = () => {
         <ToastContainer rtl={true} />
       </div>
     </MainLayout>
-
   );
 
 }

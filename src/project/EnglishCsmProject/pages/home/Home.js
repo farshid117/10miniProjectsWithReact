@@ -40,7 +40,7 @@ export default function Home() {
                     </Grid>
                   ))
                 ) : (
-                  <Grid xs={12}>
+                  <Grid xs>
                     <HomeModal features={features} />
                   </Grid>
                 )
@@ -73,14 +73,14 @@ export default function Home() {
               matches ? (
                 <>
                   {/* todo display Lg-Xl */}
-                  <Grid lg={6}>
-                    <h3 className="widgetTitle me-3" style={{ direction: "ltr" }}>Transaction Reports:</h3>
+                  <Grid xs lg={6}>
+                    <h3 className="widgetTitle me-3" style={{ direction: "ltr" }}>Transaction Reports :</h3>
                     <div className="card m-2 p-3" style={{ background: "rgba(255,255,255,.9)" }}>
                       <LastTransaction />
                     </div>
                   </Grid>
-                  <Grid lg={6}>
-                    <h3 className="widgetTitle me-3" style={{ direction: "ltr" }}>Recently member :</h3>
+                  <Grid xs lg={6}>
+                    <h3 className="widgetTitle me-3" style={{ direction: "ltr" }}>Recently Member :</h3>
                     <div className="card m-2 p-3" style={{ background: "rgba(255,255,255,.9)" }}>
                       <NewJoinMember />
                     </div>
