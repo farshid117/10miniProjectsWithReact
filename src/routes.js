@@ -1,7 +1,9 @@
+import { Navigate } from 'react-router-dom';
+
 import {
     Courses, CourseDetail, About, Dashboard, Setting, LoginForm, Panel,
     PrivateRoute, Users, MainCourse, ShopRefactor, TodoListRefactor, NoteApp, Ticket,
-    AddBook, Login2, AppTen
+    AddBook, Login2, AppTen, MainCustomeHook
 } from './project';
 import Practice from './practice';
 import Main from './Main';
@@ -14,7 +16,8 @@ import {
     ProductDetails,
     NotFound
 } from "./project/EnglishCsmProject/pages"
-import { Navigate } from 'react-router-dom';
+
+import { MainUseFetch, MainUseLocalStorage } from './project/CustomHooks';
 
 export let routes = [
     {
@@ -72,6 +75,16 @@ export let routes = [
                 { path: '*', element: <NotFound /> },
             ]
     },
+    {
+        path: '/customhooks', element: <MainCustomeHook />,
+        children:[
+            { path: 'usefetch', element: <MainUseFetch /> },
+                { path: 'uselocalstorage', element: <MainUseLocalStorage />, },
+            
+                { path: '*', element: <NotFound /> },
+            ]
+    },
+   
 
 
 ]

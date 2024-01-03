@@ -14,7 +14,6 @@ const ProductDetails = () => {
         <>
 
             <section id='productInfo'>
-
                 <div className='container mt-3 '>
                     <div className="row justify-content-between align-items-end">
                         <div className="col-12 col-md-6">
@@ -63,13 +62,14 @@ const ProductDetails = () => {
 
                         </div>
                         <div className="col-12 col-md-6 mt-3 mt-md-0 mb-0" dir='ltr'>
-                            <ReChart title="میزان فروش سه ماهه" data={productChartInfo}
-                                datakeyX="month" datakeyY="total"
+                            <ReChart
+                                title="میزان فروش سه ماهه"
+                                data={productChartInfo}
+                                datakeyX="month"
+                                datakeyY="total"
                             />
                         </div>
                     </div>
-
-
                 </div>
             </section>
             <section id='editProduct' className='mt-3'>
