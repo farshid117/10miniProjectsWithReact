@@ -20,7 +20,6 @@ const MainUseFetch = () => {
                     <div key={post.id} className='text-center' dir='ltr'>
                         <p>{post.id}-{post.title}</p>
                         <hr />
-
                     </div>
 
                 ))
@@ -29,5 +28,4 @@ const MainUseFetch = () => {
         </>
     );
 }
-
 export default MainUseFetch;
