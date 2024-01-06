@@ -1,0 +1,19 @@
+.hero .form-box {
+    height: 280px;
+    background: #fff;
+    border-radius: 5px;
+}
+.input-group2 input[type=checkbox] {
+    margin: 20px 0;
+    margin-right: 10px;
+}
+.input-group2 label {
+    margin-right: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(75, 75, 75);
+}
+::-webkit-input-placeholder{
+    color: #777 !important;
+    font-size: 30px !important;
+}
