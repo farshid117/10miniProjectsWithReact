@@ -28,3 +28,5 @@ export { default as Users } from "./firebaseExample/Users"
 export { default as AppTen } from "./EnglishCsmProject/AppTen"
 
 export { default as MainCustomeHook } from "./CustomHooks/MainCustomeHook"
+
+export { default as MainHooks } from "./Hooks/MainHooks"

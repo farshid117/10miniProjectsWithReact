@@ -33,6 +33,7 @@ const Main = () => {
                             <NavLink to="/rrd" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>courses project with react-router-dom</NavLink>
                             <NavLink to="/cmsproject" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>10 : CmsProject</NavLink>
                             <NavLink to="/customhooks" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>11 : Custome Hooks</NavLink>
+                            <NavLink to="/hooks" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>12 : useMemmo & useCallback</NavLink>
                         </div>
                     </div>
                 </div>

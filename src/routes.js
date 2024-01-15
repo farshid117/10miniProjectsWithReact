@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import {
     Courses, CourseDetail, About, Dashboard, Setting, LoginForm, Panel,
     PrivateRoute, Users, MainCourse, ShopRefactor, TodoListRefactor, NoteApp, Ticket,
-    AddBook, Login2, AppTen, MainCustomeHook
+    AddBook, Login2, AppTen, MainCustomeHook, MainHooks
 } from './project';
 import Practice from './practice';
 import Main from './Main';
@@ -18,17 +18,16 @@ import {
 } from "./project/EnglishCsmProject/pages"
 
 import { MainUseFetch, MainUseInput, MainUseLocalStorage } from './project/CustomHooks';
+import { UseMemo, UseCallback, UseMemoEx1, UseMemoEx2 } from './project/Hooks';
 
 export let routes = [
     {
-        path: '/',
-        element: <Main />
+        path: '/', element: <Main />
     },
     {
-        path: '/practice',
-        element: <Practice />
+        path: '/practice', element: <Practice />
     },
-    /* Nested Route */
+    /*todo Nested Route */
     {
         path: '/rrd',
         element: <MainCourse />,
@@ -86,7 +85,25 @@ export let routes = [
             { path: '*', element: <NotFound /> },
         ]
     },
+    {
+        path: '/hooks', element: <MainHooks />,
+        children: [
+            { path: 'usecallback', element: <UseCallback />, },
+            
+            { path: '*', element: <NotFound /> },
+        ]
+         
+    },
 
+    {
+        path: '/usememo', element: <UseMemo /> ,
+        children: [
+            { path: 'example1', element: <UseMemoEx1 />, },
+            { path: 'example2', element: <UseMemoEx2 />, },
+
+            { path: '*', element: <NotFound /> },
+        ]
+    }
 
 
 ]
