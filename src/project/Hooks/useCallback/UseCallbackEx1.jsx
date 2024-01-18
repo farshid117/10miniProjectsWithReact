@@ -1,6 +1,6 @@
 import { useState, useMemo } from 'react';
 
-const UseMemoEx1 = () => {
+const UseCallbackEx1 = () => {
     const [firstCount, setFirstCount] = useState(0)
     const [secondCount, setSecondCount] = useState(0)
 
@@ -14,7 +14,7 @@ const UseMemoEx1 = () => {
     const secondCountHandler = () => {
         setSecondCount(prev => prev + 1)
     }
-    //todo isEven only depended on firsCount state
+   //todo isEven only depended on firsCount state
     const isEven = useMemo(() => {
         let index = 0
         while (index < 2000000000) {
@@ -53,4 +53,4 @@ const UseMemoEx1 = () => {
     );
 }
 
-export default UseMemoEx1;
+export default UseCallbackEx1;
