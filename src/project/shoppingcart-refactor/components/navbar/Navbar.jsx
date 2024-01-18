@@ -11,8 +11,8 @@ const NavbarShop = () => {
   
   const handleNavigation = (e) => {
     const window = e.currentTarget;
-    console.log(" window: ",  window);
-    console.log("scroll window is",y)
+    console.log(" window: ", window);
+    console.log("scroll window is", y)
 
     setY(window.scrollY);
     if (y > 10){
@@ -22,15 +22,16 @@ const NavbarShop = () => {
     }
   };
   useEffect(() => {
-
     window.addEventListener("scroll", (e) => handleNavigation(e));
-  },[scrolling,y]);
+  },[scrolling, y]);
 
  
   const navbarClass = classnames({
     headerScroll: scrolling,
   })
+
   let expand = "lg"
+
   return (
     <>
       <header id="header-shop">

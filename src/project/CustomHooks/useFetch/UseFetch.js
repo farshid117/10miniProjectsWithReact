@@ -20,7 +20,7 @@ useEffect(() => {
                setIsPending(false)
            })
    }, 2000)
-},[]);
+}, [URL]);
 
     return {posts, isPending, error}
 }
