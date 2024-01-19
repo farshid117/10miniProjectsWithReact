@@ -31,9 +31,9 @@ const Main = () => {
                             <NavLink to="/AddBook" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>BookListApp Project</NavLink>
                             <NavLink to="/Login2" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>LoginPage Project</NavLink>
                             <NavLink to="/rrd" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>courses project with react-router-dom</NavLink>
-                            <NavLink to="/cmsproject" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>10 : CmsProject</NavLink>
-                            <NavLink to="/customhooks" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>11 : Custome Hooks</NavLink>
-                            <NavLink to="/hooks" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'}>12 : useMemmo & useCallback</NavLink>
+                            <NavLink to="/cmsproject" className={({ isActive }) => isActive ? 'btn btn-danger mb-2' : 'btn btn-primary mb-2'} dir='ltr'>10 : CmsProject</NavLink>
+                            <NavLink to="/customhooks" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'} dir='ltr'>11 : Custome Hooks</NavLink>
+                            <NavLink to="/hooks" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'} dir='ltr'>12 : Important React Hooks Example</NavLink>
                         </div>
                     </div>
                 </div>

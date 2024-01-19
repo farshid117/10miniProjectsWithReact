@@ -4,3 +4,6 @@ export { default as UseMemoEx2 } from "./useMemo/UseMemoEx2"
 
 export { default as UseCallback } from "./useCallback/UseCallback"
 export { default as UseCallbackEx1 } from "./useCallback/UseCallbackEx1"
+
+export { default as UseTransition } from "./useTransition/UseTransition"
+export { default as UseTransitionEx1 } from "./useTransition/UseTransitionEx1"

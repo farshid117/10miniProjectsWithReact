@@ -18,7 +18,7 @@ import {
 } from "./project/EnglishCsmProject/pages"
 
 import { MainUseFetch, MainUseInput, MainUseLocalStorage } from './project/CustomHooks';
-import { UseMemo, UseMemoEx1, UseMemoEx2, UseCallback, UseCallbackEx1 } from './project/Hooks';
+import { UseMemo, UseMemoEx1, UseMemoEx2, UseCallback, UseCallbackEx1, UseTransition, UseTransitionEx1 } from './project/Hooks';
 
 export let routes = [
     {
@@ -87,14 +87,14 @@ export let routes = [
     },
     {
         path: '/hooks', element: <MainHooks />,
-        children: [    
+        children: [
             { path: '*', element: <NotFound /> },
         ]
-         
+
     },
 
     {
-        path: '/usememo', element: <UseMemo /> ,
+        path: '/usememo', element: <UseMemo />,
         children: [
             { path: 'example1', element: <UseMemoEx1 />, },
             { path: 'example2', element: <UseMemoEx2 />, },
@@ -103,14 +103,23 @@ export let routes = [
         ]
     },
     {
-        path: '/usecallback', element: <UseCallback /> ,
+        path: '/usecallback', element: <UseCallback />,
         children: [
             { path: 'example1', element: <UseCallbackEx1 />, },
             { path: 'example2', element: <UseMemoEx2 />, },
 
             { path: '*', element: <NotFound /> },
         ]
-    }
+    },
+    {
+        path: '/usetransition', element: <UseTransition />,
+        children: [
+            { path: 'example1', element: <UseTransitionEx1 />, },
+            // { path: 'example2', element: <UseMemoEx2 />, },
+
+            { path: '*', element: <NotFound /> },
+        ]
+    },
 
 
 ]
