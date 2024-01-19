@@ -18,7 +18,8 @@ import {
 } from "./project/EnglishCsmProject/pages"
 
 import { MainUseFetch, MainUseInput, MainUseLocalStorage } from './project/CustomHooks';
-import { UseMemo, UseMemoEx1, UseMemoEx2, UseCallback, UseCallbackEx1, UseTransition, UseTransitionEx1 } from './project/Hooks';
+import {
+    UseMemo, UseMemoEx1, UseMemoEx2, UseCallback, UseCallbackEx1, UseTransition, UseTransitionEx1, UseReducer, UseReducerEx1 } from './project/Hooks';
 
 export let routes = [
     {
@@ -107,6 +108,15 @@ export let routes = [
         children: [
             { path: 'example1', element: <UseCallbackEx1 />, },
             { path: 'example2', element: <UseMemoEx2 />, },
+
+            { path: '*', element: <NotFound /> },
+        ]
+    },
+    {
+        path: '/usereducer', element: <UseReducer />,
+        children: [
+            { path: 'example1', element: <UseReducerEx1 />, },
+            // { path: 'example2', element: <UseMemoEx2 />, },
 
             { path: '*', element: <NotFound /> },
         ]

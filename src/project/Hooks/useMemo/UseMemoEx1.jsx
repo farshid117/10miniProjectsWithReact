@@ -24,8 +24,9 @@ const UseMemoEx1 = () => {
     }, [firstCount])
 
     return (
-        <div className='container'>
-            <div className='row justify-content-center mt-5'>
+        <div className='container text-center'>
+            <p className='fw-bold fs-2 mt-5'>useMemo <span className='text-primary'>Example1</span></p>
+            <div className='row justify-content-center mt-4'>
                 <div className="col-12 col-md-6 col-lg-4">
                     <div className='card'>
                         <div className="card-body">

@@ -1,43 +1,49 @@
-import { Button, Stack, Typography, Divider } from '@mui/material';
-import { useReducer } from 'react';
+import { useState, useRef, useEffect, useTransition } from 'react';
 
-/* 
-    1: Make Reducer function
-    2: initialization useReducer Hook
-    3: dispatch action to reducer function
-*/
-const reducer = (state= [], action) => {
-    // console.log("state: ", state);
-    switch (action.type) {
-        case "add":
-            return { count: state.count + 1 };
-
-        case "minus":
-            return { count: state.count - 1 };
-
-        default: return state
-
-    }
-}
 const UseTransitionEx1 = () => {
-    const [state, dispatch] = useReducer(reducer, { count: 0 })
-    // console.log("state: ", state ); //state is object with count property that initialized
 
-    const add = () => {
-        dispatch({ type: "add" })
-    }
-    const minus = () => {
-        dispatch({ type: "minus" })
+    const [value, setValue] = useState(0)
+    const [lists, setLists] = useState([])
+
+    const inputRef = useRef(null)
+
+    useEffect(() => {
+        inputRef.current.focus()
+    },[])
+
+    const [isPending, startTransition] = useTransition()
+
+    const onChangeHandler = (event) => {
+        setValue(event.target.value) //first preority
+
+        startTransition(() => {
+            const numberList = []
+            let count = 0
+            while (count < 20000) {
+                numberList.push(event.target.value)
+                count++
+            }
+            setLists(numberList)
+        })
+
     }
     return (
-        <div className='mt-5'>
-            <Divider variant='middle' sx={{ mb: 4, border: "3px solid #000", }} />
-            
-            <Stack direction="row" gap={2} alignItems="center" justifyContent="center">
-                <Button variant="contained" onClick={add}>Add </Button>
-                <Typography variant='h3' sx={{ mx: 2 }} dir="ltr" >{state.count}</Typography>
-                <Button variant="contained" onClick={minus} color="warning">minus</Button>
-            </Stack>
+        <div className='d-flex flex-column align-items-center mt-5' >
+            <p className='fw-bold fs-2'>useTransition <span className='text-primary'>Example</span></p>
+            <input
+                ref={inputRef}
+                type="text"
+                className="form-control w-50"
+                value={value}
+                onChange={onChangeHandler}
+            />
+            <ul className='mt-5' dir='ltr' style={{fontSize:16, fontWeight:"bold"}}>
+                {
+                   isPending ? "is Loading...!" : lists.map((item, index) => (
+                        <li key={index}> {`Number is :    ${item}`} </li>
+                    ))
+                }
+            </ul>
         </div>
     );
 }

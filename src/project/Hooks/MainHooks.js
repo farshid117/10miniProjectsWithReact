@@ -14,6 +14,9 @@ const MainHooks = () => {
                     <Button variant="contained" component={Link} to="/usecallback">
                         useCallback
                     </Button>
+                    <Button variant="contained" component={Link} to="/usereducer" color="error">
+                        useReducer
+                    </Button>
                     <Button variant="contained" component={Link} to="/usetransition" color="warning">
                         useTransition
                     </Button>

@@ -7,3 +7,6 @@ export { default as UseCallbackEx1 } from "./useCallback/UseCallbackEx1"
 
 export { default as UseTransition } from "./useTransition/UseTransition"
 export { default as UseTransitionEx1 } from "./useTransition/UseTransitionEx1"
+
+export { default as UseReducer } from "./useReducer/UseReducer"
+export { default as UseReducerEx1 } from "./useReducer/UseReducerEx1"
