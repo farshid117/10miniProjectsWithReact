@@ -22,7 +22,7 @@ useEffect(() => {
    }, 2000)
 }, [URL]);
 
-    return {posts, isPending, error}
+    return [posts, isPending, error]
 }
 
 export default UseFetch;

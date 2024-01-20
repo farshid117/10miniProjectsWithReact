@@ -4,8 +4,8 @@ import UseFetch from "./UseFetch"
 import Spinner from "../../../assets/Spinner.gif"
 
 const MainUseFetch = () => {
-    let URL = "https://jsonplaceholder.typicode.com/posts"
-    const { posts, isPending, error } = UseFetch(URL)
+    let URL = "https://jsonplaceholder.typicode.com/posts" //"https://jsonplaceholder.ir/users" //
+    const [posts, isPending, error] = UseFetch(URL)
     return (
         <>
             {isPending && (

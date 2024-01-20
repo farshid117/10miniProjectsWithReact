@@ -1,57 +1,66 @@
-import { useState, useMemo } from 'react';
+import { useState, useRef, useEffect, memo, useCallback } from 'react';
 
 const UseCallbackEx1 = () => {
-    const [firstCount, setFirstCount] = useState(0)
-    const [secondCount, setSecondCount] = useState(0)
+    const inputRef = useRef(null)
 
-    const firstCountHandler = () => {
-        let index = 0
-        while (index < 2000000000) {
-            index++;
-        }
-        setFirstCount(prev => prev + 1)
-    }
-    const secondCountHandler = () => {
-        setSecondCount(prev => prev + 1)
-    }
-   //todo isEven only depended on firsCount state
-    const isEven = useMemo(() => {
-        let index = 0
-        while (index < 2000000000) {
-            index++;
-        }
-        return firstCount % 2 === 0
-    }, [firstCount])
+    const [counter, setCounter] = useState(0)
+    const [title, setTitle] = useState("")
+
+    useEffect(() => {
+        inputRef.current.focus()
+    }, [])
+
+    //todo: refrential equality
+    const addCounter = useCallback(() => {
+       return setCounter(prevCounter => prevCounter + 1)
+    }, [counter])
+    const minusCounter = useCallback(() => {
+        return setCounter(prevCounter => prevCounter - 1)
+    }, [counter])
+
+    console.log("App Run!")
 
     return (
-        <div className='container text-center'>
-            <p className='fw-bold fs-2 mt-5'>useCallback <span className='text-primary'>Example1</span></p>
-            <div className='row justify-content-center mt-4'>
-                <div className="col-12 col-md-6 col-lg-4">
-                    <div className='card'>
-                        <div className="card-body">
-                            <div className='text-center'>
-                                <button className='btn btn-primary' onClick={firstCountHandler}>
-                                    Add FirstCount: {firstCount}
-                                </button>
-                                <br /><br />
-                                {/* todo isEven only depended on firsCount state */}
-                                {
-                                    isEven ?
-                                        <p className='fw-bold'>FirstCount is <span className='text-success'>Even</span></p>
-                                        :
-                                        <p className='fw-bold'>FirstCount is <span className='text-danger'>Odd</span></p>
-                                }
-                                <button className='btn btn-primary' onClick={secondCountHandler}>
-                                    Add SecondCount: {secondCount}
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <>
+            <div className='w-50 m-auto text-center'>
+                <input
+                    ref={inputRef}
+                    type="text"
+                    className='form-control'
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
+
+                <Title title={title} />
+
+                <div className='h3 mb-2'><span className='badge bg-success rounded-circle'>{counter}</span></div>
+
+                <Buttons add={addCounter} minus={minusCounter} />
             </div>
-        </div>
+
+        </>
     );
 }
 
 export default UseCallbackEx1;
+
+
+//! titlte is primitive type
+const Title = memo(({ title }) => {
+    console.log("Title Run!")
+    return (
+        <h3 className='mt-3'>{title}</h3>
+    )
+}
+)
+
+//! add & minus are function and refrence Type
+const Buttons = memo(({ add, minus }) => {
+    console.log("Buttons Run !")
+    return (
+        <>
+            <button className="btn btn-primary me-2" onClick={add}>Add</button>
+            <button className="btn btn-warning" onClick={minus}>minus</button>
+        </>
+    )
+})
