@@ -19,7 +19,10 @@ import {
 
 import { MainUseFetch, MainUseInput, MainUseLocalStorage } from './project/CustomHooks';
 import {
-    UseMemo, UseMemoEx1, UseMemoEx2, UseCallback, UseCallbackEx1, UseTransition, UseTransitionEx1, UseReducer, UseReducerEx1, UseRef, UseRefEx1 } from './project/Hooks';
+    UseMemo, UseMemoEx1, UseMemoEx2, UseCallback, UseCallbackEx1,
+    UseTransition, UseTransitionEx1, UseReducer, UseReducerEx1,
+    UseRef, UseRefEx1, UseRefEx2,
+} from './project/Hooks';
 
 export let routes = [
     {
@@ -134,7 +137,7 @@ export let routes = [
         path: '/useref', element: <UseRef />,
         children: [
             { path: 'example1', element: <UseRefEx1 />, },
-            // { path: 'example2', element: <UseMemoEx2 />, },
+            { path: 'example2', element: <UseRefEx2 />, },
 
             { path: '*', element: <NotFound /> },
         ]

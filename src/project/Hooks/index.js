@@ -13,3 +13,4 @@ export { default as UseReducerEx1 } from "./useReducer/UseReducerEx1"
 
 export { default as UseRef } from "./useRef/UseRef"
 export { default as UseRefEx1 } from "./useRef/UseRefEx1"
+export { default as UseRefEx2 } from "./useRef/UseRefEx2"
