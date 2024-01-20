@@ -10,3 +10,6 @@ export { default as UseTransitionEx1 } from "./useTransition/UseTransitionEx1"
 
 export { default as UseReducer } from "./useReducer/UseReducer"
 export { default as UseReducerEx1 } from "./useReducer/UseReducerEx1"
+
+export { default as UseRef } from "./useRef/UseRef"
+export { default as UseRefEx1 } from "./useRef/UseRefEx1"

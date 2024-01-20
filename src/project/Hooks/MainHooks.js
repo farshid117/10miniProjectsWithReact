@@ -20,6 +20,9 @@ const MainHooks = () => {
                     <Button variant="contained" component={Link} to="/usetransition" color="warning">
                         useTransition
                     </Button>
+                    <Button variant="contained" component={Link} to="/useref" color="info">
+                        useRef
+                    </Button>
                 </Grid>
                 <Grid xs={12} marginTop={3}>
                     <Outlet />
