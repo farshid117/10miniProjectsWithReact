@@ -4,27 +4,27 @@ import FilterNoeteExap2 from './FilterNoeteExap2';
 
 const UseMemoEx2 = () => {
     const inputRef = useRef(null)
-    const [notes, setNotes] = useState([])
     const [newNote, setNewNote] = useState("")
+    const [notes, setNotes] = useState([])
 
     useEffect(() => {
         inputRef.current.focus()
     }, [notes])
 
     const addNote = (event) => {
-            event.preventDefault()
-            if (newNote.trim().length > 0) {
-                const newNoteObj = {
-                    id: notes.length + 1,
-                    title: newNote
-                }
-                 setNotes(preNotes => [...preNotes, newNoteObj]) 
-                setNewNote("")
-
-            } else {
-                alert("please enter a note")
+        event.preventDefault()
+        if (newNote.trim().length > 0) {
+            const newNoteObj = {
+                id: notes.length + 1,
+                title: newNote
             }
+            setNotes(preNotes => [...preNotes, newNoteObj])
+            setNewNote("")
+
+        } else {
+            alert("Please Enter a Note")
         }
+    }
 
     const resetNotesArray = () => {
         setNotes([])
@@ -65,19 +65,21 @@ const UseMemoEx2 = () => {
                                                 )
                                             })
                                         ) : (
-                                            <p className='text-center fw-bold'>Notes Array is empty...
-                                                <br /> <span className='fw-normal'>pls enter new notes</span>
+                                            <p className='text-center fw-bold'>
+                                                Notes Array is Empty...
+                                                <br />
+                                                <span className='fw-normal'>pls enter a new note</span>
                                             </p>
                                         )
-                                            ,[notes])
+                                            , [notes])
                                     }
                                 </ul>
-                               {
-                                notes.length > 0 ? <hr /> : null
-                               }
+                                {
+                                    notes.length > 0 ? <hr /> : null
+                                }
                                 <ul dir="ltr" className='text-end'>
                                     {/* todo: notes is Array => Refrence type */}
-                                    <FilterNoeteExap2 notes={notes} /> 
+                                    <FilterNoeteExap2 notes={notes} />
                                 </ul>
                             </div>
                         </div>
@@ -85,7 +87,7 @@ const UseMemoEx2 = () => {
                 </div>
                 <div className="row justify-content-center">
                     <div className="col-12 text-center">
-                        <button className='btn btn-warning btn-sm mt-3' onClick={resetNotesArray} >Reset Notes</button>
+                        <button className='btn btn-warning btn-sm mt-3' onClick={resetNotesArray}> Reset Notes </button>
                     </div>
                 </div>
 

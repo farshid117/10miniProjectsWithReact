@@ -11,12 +11,14 @@ const FilterNoeteExap2 = memo(({ notes }) => {
                 }).map(note => {
                     console.log("Render Map Filter Block")
                     return (
-                        <li key={note.id}>{note.id} - {note.title}</li>
+                        <li key={note.id}>
+                            {note.id} - {note.title}
+                        </li>
                     )
                 })
-            
+
             ) : null}
-                
+
         </div>
     );
 }
