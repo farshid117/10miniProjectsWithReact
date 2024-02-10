@@ -60,9 +60,8 @@ const UseMemoEx2 = () => {
                                         useMemo(() => notes.length > 0 ? (
                                             notes.map(note => {
                                                 console.log("Render Map Block");
-                                                return (
-                                                    <li key={note.id} className='fw-bold' >{note.id} - {note.title}</li>
-                                                )
+                                                return <li key={note.id} className='fw-bold' >{note.id} - {note.title}</li>
+                                                
                                             })
                                         ) : (
                                             <p className='text-center fw-bold'>

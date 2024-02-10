@@ -10,7 +10,7 @@ const UseCallbackEx1 = () => {
         inputRef.current.focus()
     }, [])
 
-    //todo: refrential equality
+    //todo :Rrefrential Equality
     const addCounter = useCallback(() => {
        return setCounter(prevCounter => prevCounter + 1)
     }, [counter])
@@ -33,7 +33,7 @@ const UseCallbackEx1 = () => {
 
                 <Title title={title} />
 
-                <div className='h3 mb-2'><span className='badge bg-success rounded-circle'>{counter}</span></div>
+                <p className='h3 mb-2'><span className='badge bg-success rounded-circle'>{counter}</span></p>
 
                 <Buttons add={addCounter} minus={minusCounter} />
             </div>

@@ -1,5 +1,5 @@
-import { Button, Stack, Typography, Divider } from '@mui/material';
 import { useReducer } from 'react';
+import { Button, Stack, Typography, Divider } from '@mui/material';
 
 /* 
     1: Make Reducer function
@@ -19,9 +19,9 @@ const reducer = (state= [], action) => {
 
     }
 }
-const UseTransitionEx1 = () => {
-    const [state, dispatch] = useReducer(reducer, { count: 0 })
-    // console.log("state: ", state ); //state is object with count property that initialized
+const UseReducerEx1 = () => {
+    const [store, dispatch] = useReducer(reducer, { count: 0 })
+    console.log("store: ", store ); //state is object with count property that initialized
 
     const add = () => {
         dispatch({ type: "add" })
@@ -34,12 +34,12 @@ const UseTransitionEx1 = () => {
             <p className='fw-bold fs-2'>useReducer <span className='text-primary'>Example</span></p>
             <Divider variant='middle' sx={{ mb: 3, border: "3px solid #000" }} />
             <Stack direction="row" gap={2} alignItems="center" justifyContent="center">
-                <Button variant="contained" onClick={add}>Add </Button>
-                <Typography variant='h3' sx={{ mx: 2 }} dir="ltr" >{state.count}</Typography>
-                <Button variant="contained" onClick={minus} color="warning">minus</Button>
+                <Button variant="contained" onClick={add}> Add </Button>
+                <Typography variant='h3' sx={{ mx: 3, color:"#fff" }} dir="ltr" >{store.count}</Typography>
+                <Button variant="contained" onClick={minus} color="warning"> minus </Button>
             </Stack>
         </div>
     );
 }
 
-export default UseTransitionEx1;
+export default UseReducerEx1;

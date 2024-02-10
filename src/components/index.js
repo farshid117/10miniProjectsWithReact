@@ -1,6 +1,8 @@
 
 /**  contacts Components */
 //export {default as SearchContact } from "./contacts/SearchContact"
+export { default as MainLayout } from "./Layout/MainLayout"
+
 export {default as Counter } from "./minicomponent/Counter"
 export { default as Temperature } from "./minicomponent/Temperature"
 export { default as NavbarBadge } from "./minicomponent/NavbarBadge"
@@ -13,7 +15,6 @@ export { default as ModalRgisterFom } from "./minicomponent/ModalRgisterFom"
 export { default as Quiz } from "./minicomponent/quizApp/Quiz"
 export { default as QuizCard } from "./minicomponent/quizApp/QuizCard"
 export { default as ShowReportCart } from "./minicomponent/quizApp/ShowReportCart"
-export { default as MainLayout } from "./Layout/MainLayout"
 
 
 /* React-bootstrap Component */
