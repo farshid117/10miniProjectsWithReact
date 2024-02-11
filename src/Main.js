@@ -34,6 +34,7 @@ const Main = () => {
                             <NavLink to="/cmsproject" className={({ isActive }) => isActive ? 'btn btn-danger mb-2' : 'btn btn-primary mb-2'} dir='ltr'>10 : CmsProject</NavLink>
                             <NavLink to="/customhooks" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'} dir='ltr'>11 : Custome Hooks</NavLink>
                             <NavLink to="/hooks" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'} dir='ltr'>12 : Important React Hooks Example</NavLink>
+                            <NavLink to="/pagination" className={({ isActive }) => isActive ? 'btn btn-danger mb-2':'btn btn-primary mb-2'} dir='ltr'>14 : Pagination Project</NavLink>
                         </div>
                     </div>
                 </div>

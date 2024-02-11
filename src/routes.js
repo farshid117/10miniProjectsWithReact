@@ -3,7 +3,7 @@ import { Navigate } from 'react-router-dom';
 import {
     Courses, CourseDetail, About, Dashboard, Setting, LoginForm, Panel,
     PrivateRoute, Users, MainCourse, ShopRefactor, TodoListRefactor, NoteApp, Ticket,
-    AddBook, Login2, AppTen, MainCustomeHook, MainHooks
+    AddBook, Login2, AppTen, MainCustomeHook, MainHooks, MainPagination
 } from './project';
 import Practice from './practice';
 import Main from './Main';
@@ -141,6 +141,10 @@ export let routes = [
 
             { path: '*', element: <NotFound /> },
         ]
+    },
+    {
+        path: '/pagination', element: <MainPagination />,
+      
     },
 
 
