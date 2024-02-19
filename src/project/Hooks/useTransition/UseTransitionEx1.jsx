@@ -9,27 +9,25 @@ const UseTransitionEx1 = () => {
 
     useEffect(() => {
         inputRef.current.focus()
-    },[])
+    }, [])
 
     const [isPending, startTransition] = useTransition()
 
     const onChangeHandler = (event) => {
         setValue(event.target.value) //first preority
 
+        //ignore this untill isPending is true
         startTransition(() => {
             const numberList = []
-            let count = 0
-            while (count < 20000) {
-                numberList.push(event.target.value)
-                count++
-            }
+            numberList.push(value)
+
             setLists(numberList)
         })
 
     }
     return (
         <div className='d-flex flex-column align-items-center mt-5' >
-            <p className='fw-bold fs-2'>useTransition <span className='text-primary'>Example</span></p>
+            <p className='fw-bold fs-2'> useTransition <span className='text-primary'>Example</span></p>
             <input
                 ref={inputRef}
                 type="text"
@@ -37,11 +35,13 @@ const UseTransitionEx1 = () => {
                 value={value}
                 onChange={onChangeHandler}
             />
-            <ul className='mt-5' dir='ltr' style={{fontSize:16, fontWeight:"bold"}}>
+            <ul className='mt-5' dir='ltr' style={{ fontSize: 16, fontWeight: "bold" }}>
                 {
-                   isPending ? "is Loading...!" : lists.map((item, index) => (
+
+                      isPending ? "is Loading...!" : lists.map((item, index) => (
                         <li key={index}> {`Number is :    ${item}`} </li>
                     ))
+
                 }
             </ul>
         </div>
