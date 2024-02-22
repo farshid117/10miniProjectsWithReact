@@ -3,7 +3,7 @@ const MainPagination = () => {
     const [todos, setTodos] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
     const [isPending, setIsPending] = useState(true)
-    const [pagesNumber, setPagesNumber] = useState(0)
+    const [totalpagese, setTotalpagese] = useState(0)
     const [todosPerPage, setTodosPerPage] = useState([])
     const pageSize = 10
 
@@ -13,7 +13,7 @@ const MainPagination = () => {
             .then(response => response.json())
             .then((todos) => {
                 setTodos(todos)
-                setPagesNumber(Math.ceil(todos.length / pageSize)) // 200 / 10 = 20
+                setTotalpagese(Math.ceil(todos.length / pageSize)) // 200 / 10 = 20
                 setIsPending(false)
             })
     }, [])
@@ -61,12 +61,12 @@ const MainPagination = () => {
                                                         <td>{todo.userId}</td>
                                                         <td>{todo.title}</td>
                                                         <td>
-                                                            <span className={todo.completed ? "badge bg-success" : "badge bg-primary"}>
+                                                            <span className={todo.completed ? "badge text-success fw-bold" : "badge text-danger fw-bold"}>
                                                                 {todo.completed ? "completed" : "uncompleted"}
                                                             </span>
                                                         </td>
                                                         <td>
-                                                            <button className='btn btn-primary btn-sm ms-1' onClick={(event) => editHandler(event, todo.id)}>Edit</button>
+                                                            <button className='btn btn-success btn-sm ms-1' onClick={(event) => editHandler(event, todo.id)}>Edit</button>
                                                             <button className='btn btn-danger btn-sm' onClick={(event) => deleteHandler(event, todo.id)}>Delete</button>
                                                         </td>
                                                     </tr>
@@ -79,7 +79,7 @@ const MainPagination = () => {
                             </div>
                         </div>
                         <section id='pagination' className='d-flex justify-content-center mt-3'>
-                            <nav aria-label="Page navigation example">
+                            <nav >
                                 <ul className="pagination">
                                     <li className="page-item">
                                         <a className="page-link" href="#b" alt="prev" aria-label="Previous">
@@ -87,7 +87,7 @@ const MainPagination = () => {
                                         </a>
                                     </li>
                                     {
-                                        Array.from(Array(pagesNumber).keys()).map(index => (
+                                        Array.from(Array(totalpagese).keys()).map(index => (
                                             <li
                                                 key={index + 1}
                                                 className={index + 1 === currentPage ? "page-item active" : "page-item "}
